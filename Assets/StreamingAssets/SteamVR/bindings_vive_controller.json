@@ -79,7 +79,7 @@
               "output": "/actions/hvr/in/leftsecondaryaxis"
             },
             "touch": {
-              "output": "/actions/hvr/in/leftprimaryaxistouch"
+              "output": "/actions/hvr/in/leftsecondaryaxistouch"
             }
           }
         },
@@ -95,7 +95,7 @@
               "output": "/actions/hvr/in/rightsecondaryaxis"
             },
             "touch": {
-              "output": "/actions/hvr/in/leftprimaryaxistouch"
+              "output": "/actions/hvr/in/rightsecondaryaxistouch"
             }
           }
         },

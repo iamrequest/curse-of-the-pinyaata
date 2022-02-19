@@ -227,31 +227,63 @@
             },
             {
                "inputs" : {
-                  "click" : {
+                  "grab" : {
+                     "output" : "/actions/hvr/in/leftgripbutton"
+                  }
+               },
+               "mode" : "grab",
+               "parameters" : {
+                  "value_hold_threshold" : "1"
+               },
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "grab" : {
                      "output" : "/actions/hvr/in/rightgripbutton"
                   }
                },
-               "mode" : "button",
+               "mode" : "grab",
                "parameters" : {
-                  "click_activate_threshold" : "0.9",
-                  "click_deactivate_threshold" : "0.9",
-                  "haptic_amplitude" : "0"
+                  "value_hold_threshold" : "1"
                },
                "path" : "/user/hand/right/input/grip"
             },
             {
                "inputs" : {
-                  "click" : {
-                     "output" : "/actions/hvr/in/leftgripbutton"
+                  "pull" : {
+                     "output" : "/actions/hvr/in/leftgrip"
                   }
                },
-               "mode" : "button",
-               "parameters" : {
-                  "click_activate_threshold" : "0.25",
-                  "click_deactivate_threshold" : "0.2",
-                  "haptic_amplitude" : "0"
-               },
+               "mode" : "trigger",
                "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "force" : {
+                     "output" : "/actions/hvr/in/leftgripforce"
+                  }
+               },
+               "mode" : "force_sensor",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/hvr/in/rightgrip"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "force" : {
+                     "output" : "/actions/hvr/in/rightgripforce"
+                  }
+               },
+               "mode" : "force_sensor",
+               "path" : "/user/hand/right/input/grip"
             }
          ]
       }

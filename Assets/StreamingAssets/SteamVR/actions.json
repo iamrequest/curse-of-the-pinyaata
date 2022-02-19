@@ -163,6 +163,14 @@
       "skeleton": "/skeleton/hand/right"
     },
     {
+      "name": "/actions/HVR/in/LeftGripForce",
+      "type": "vector1"
+    },
+    {
+      "name": "/actions/HVR/in/RightGripForce",
+      "type": "vector1"
+    },
+    {
       "name": "/actions/HVR/out/Haptics",
       "type": "vibration"
     },
