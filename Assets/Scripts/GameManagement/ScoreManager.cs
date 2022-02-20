@@ -53,6 +53,8 @@ public class ScoreManager : MonoBehaviour {
             if (currentScore > highScores[i]) {
                 highScores.RemoveAt(highScores.Count - 1);
                 highScores.Insert(i, currentScore);
+
+                // TODO: Call score manager event channel here
                 return;
             }
         }

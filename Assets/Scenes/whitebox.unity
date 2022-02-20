@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 97767642}
   - component: {fileID: 97767641}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9841c917c5b833342a73e442ecaa1217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStateEventChannel: {fileID: 11400000, guid: 7368ba1356e34684d828411b1ba689b6,
+    type: 2}
   gameDurationTotal: 3
   gameDurationCurrent: 0
 --- !u!4 &97767643

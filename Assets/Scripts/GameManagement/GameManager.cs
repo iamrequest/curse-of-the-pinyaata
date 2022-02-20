@@ -7,6 +7,7 @@ public enum GameState {
     STOPPED, ACTIVE
 }
 public class GameManager : MonoBehaviour {
+    public GameStateEventChannel gameStateEventChannel;
     public GameState gameState { get; private set; }
     public float gameDurationTotal, gameDurationCurrent;
 
@@ -22,6 +23,16 @@ public class GameManager : MonoBehaviour {
             Destroy(this);
         }
     }
+
+    private void OnEnable() {
+        gameStateEventChannel.doStartGame += StartGame;
+        gameStateEventChannel.doStopGame += EndGame;
+    }
+    private void OnDisable() {
+        gameStateEventChannel.doStartGame -= StartGame;
+        gameStateEventChannel.doStopGame -= EndGame;
+    }
+
 
     [Button]
     [ButtonGroup("Game Start Stop")]
