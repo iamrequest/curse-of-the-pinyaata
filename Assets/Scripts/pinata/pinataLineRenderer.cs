@@ -50,6 +50,7 @@ public class pinataLineRenderer : MonoBehaviour {
     [HideInPlayMode]
     [Button("Configure Manually")]
     public void RefreshLineRendererInInspector() {
+        lineRenderer = GetComponent<LineRenderer>();
         SetupLineRenderer();
         UpdateLineRenderer();
     }
