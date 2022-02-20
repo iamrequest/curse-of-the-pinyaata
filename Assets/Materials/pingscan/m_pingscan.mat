@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: m_pingscan
+  m_Shader: {fileID: -6465566751694194690, guid: 90862dda1bb679b468ea4c8de6c10ea1,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_216E705: 0.5
+    - Vector1_C3BADBD9: 3
+    - Vector1_E6EC44CF: 2.03
+    m_Colors:
+    - Color_481A9092: {r: 0.2264151, g: 0.2253471, b: 0.2253471, a: 1}
+    - Color_48969: {r: 0.3436276, g: 0.41266704, b: 0.735849, a: 1}
+    - Vector3_B828DFD3: {r: 0, g: 0, b: 0, a: 0}
