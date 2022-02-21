@@ -103,3 +103,7 @@ crashlytics-build.properties
 # Polygon Office pack
 /Assets/PolygonOffice
 /Assets/PolygonOffice.meta
+
+# Node canvas
+Assets/ParadoxNotion
+Assets/ParadoxNotion.meta

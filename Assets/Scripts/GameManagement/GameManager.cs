@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour {
     }
 
 
-    [Button]
+    [Button] [HideInEditorMode]
     [ButtonGroup("Game Start Stop")]
     public void StartGame() {
         if (gameState == GameState.ACTIVE) {
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour {
         ScoreManager.Instance.ResetScore();
     }
 
-    [Button]
+    [Button] [HideInEditorMode]
     [ButtonGroup("Game Start Stop")]
     public void EndGame() {
         if (gameState != GameState.ACTIVE) {

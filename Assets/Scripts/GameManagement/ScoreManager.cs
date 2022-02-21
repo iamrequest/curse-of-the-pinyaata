@@ -31,13 +31,13 @@ public class ScoreManager : MonoBehaviour {
         }
     }
 
-    [Button("Add 10 points")]
+    [Button("Add 10 points")] [HideInEditorMode]
     [ButtonGroup("Debug")]
     private void DebugAddScore() {
         AddScore(10);
     }
 
-    [Button]
+    [Button] [HideInEditorMode]
     [ButtonGroup("Debug")]
     public void ResetScore() {
         currentScore = 0;
@@ -46,7 +46,7 @@ public class ScoreManager : MonoBehaviour {
     /// <summary>
     /// Given currentScore, add it to the list of high scores if it beats any of the current scores
     /// </summary>
-    [Button]
+    [Button] [HideInEditorMode]
     [ButtonGroup("Debug")]
     public void CompareScoreToHighScore() {
         for(int i = 0; i < maxNumHighScores; i++) {
