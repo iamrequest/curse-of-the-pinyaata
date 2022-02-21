@@ -99,3 +99,7 @@ crashlytics-build.properties
 
 # Odin Inspector
 /Assets/Plugins/
+
+# Polygon Office pack
+/Assets/PolygonOffice
+/Assets/PolygonOffice.meta
