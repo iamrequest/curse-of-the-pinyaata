@@ -13,7 +13,12 @@ public class SceneManagerEventChannel : ScriptableObject {
     // These events are responsible for invoking an action
     public UnityAction<string> beforeSceneLoad;
 
-    public void LoadScene(string sceneName) {
+    public string titleSceneName, gameSceneName;
+
+    public void LoadTitleScene() { LoadScene(titleSceneName); }
+    public void LoadGameScene() { LoadScene(gameSceneName);  }
+
+    private void LoadScene(string sceneName) {
         // Make sure that this scene exists in build settings
         if (SceneManager.GetSceneByName(sceneName) == null) {
             Debug.LogError("Attempted to load a scene, but no scene with that name exists in build settings");

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 584623398989698331}
   - component: {fileID: 584623398989698330}
   - component: {fileID: 584623398989698329}
+  - component: {fileID: 1042218126}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -63,3 +64,25 @@ MonoBehaviour:
   currentScore: 0
   maxNumHighScores: 5
   highScores: 
+--- !u!114 &1042218126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584623398989698328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7086acdf36f2b41a50d8a8078d5ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DEBUG_UPDATE_PINGS: 1
+  pingSweepMaterial: {fileID: 2100000, guid: e64c02c30c604b3408a86fae481d9a3c, type: 2}
+  maxNumPasses: 3
+  pingSpeed: 5
+  pingDuration: 2
+  pingSweeps: []
+  colors:
+  - {r: 0.9811321, g: 0.5970096, b: 0.5970096, a: 0.19607843}
+  - {r: 0.47267708, g: 0.760284, b: 0.8867924, a: 0.19607843}
+  - {r: 0.8119434, g: 0.9811321, b: 0.68956923, a: 0.19607843}

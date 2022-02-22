@@ -55,7 +55,7 @@ public class DialogRenderer : MonoBehaviour {
 	}
 
 	private void OnSubtitlesRequest(SubtitlesRequestInfo info) {
-		if (info.actor != dialogActor) {
+		if (info.actor != dialogActor as IDialogueActor) {
 			uiTransform.gameObject.SetActive(false);
 			return;
 		}

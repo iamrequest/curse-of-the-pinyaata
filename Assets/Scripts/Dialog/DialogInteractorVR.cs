@@ -34,8 +34,8 @@ public class DialogInteractorVR : DialogInteractor {
         HVRControllerEvents.Instance.RightPrimaryActivated.AddListener(AdvanceDialogUsingRightHand);
     }
 
-    public void OnDialogStarted(DialogueTreeController dialogTree) {
-        activeDialogController = dialogTree;
+    public void OnDialogStarted(DialogueTreeController dialogTreeController) {
+        activeDialogController = dialogTreeController;
     }
 
 

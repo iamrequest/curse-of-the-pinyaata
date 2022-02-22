@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState {
-    STOPPED, ACTIVE
+    ACTIVE, FINISHED
 }
 public class GameManager : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour {
 
         // Start the game, and game timer
         gameState = GameState.ACTIVE;
+        gameStateEventChannel.OnGameStateChanged(gameState);
+
         gameTimerCoroutine = StartCoroutine(EndGameAfterDelay());
 
         // Reset the score
@@ -56,7 +58,8 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        gameState = GameState.STOPPED;
+        gameState = GameState.FINISHED;
+        gameStateEventChannel.OnGameStateChanged(gameState);
 
         // Stop the game timer
         if (gameTimerCoroutine != null) {

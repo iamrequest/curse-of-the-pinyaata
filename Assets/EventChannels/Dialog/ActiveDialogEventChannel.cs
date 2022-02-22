@@ -1,4 +1,5 @@
 ﻿using NodeCanvas.DialogueTrees;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +13,22 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName = "Events/Active Dialog Event Channel")]
 public class ActiveDialogEventChannel : ScriptableObject {
     public UnityAction<DialogueTreeController> onDialogStarted;
+    public UnityAction onDialogFinished;
 
-    public void StartDialog(DialogueTreeController dialog) {
+    /// <summary>
+    /// Start the given dialog
+    /// </summary>
+    /// <param name="dialog"></param>
+    public void StartDialog(DialogueTreeController dialogTreeController) {
         if (onDialogStarted != null) {
-            onDialogStarted.Invoke(dialog);
-            dialog.StartDialogue();
+            onDialogStarted.Invoke(dialogTreeController);
+            dialogTreeController.StartDialogue(OnDialogFinishedCallback);
+        }
+    }
+
+    private void OnDialogFinishedCallback(bool graphStatus) {
+        if (onDialogFinished != null) {
+            onDialogFinished.Invoke();
         }
     }
 }

@@ -11,7 +11,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName = "Events/Game State Event Channel")]
 public class GameStateEventChannel : ScriptableObject {
     // These events are respond to an invoked action
-    public UnityAction<GameState> onEventRaised;
+    public UnityAction<GameState> onGameStateChanged;
 
     // These events are responsible for invoking an action
     public UnityAction doStartGame, doStopGame;
@@ -20,10 +20,10 @@ public class GameStateEventChannel : ScriptableObject {
     /// This should only be called via GameManager
     /// </summary>
     /// <param name="newGameState"></param>
-    public void RaiseEvent(GameState newGameState) {
+    public void OnGameStateChanged(GameState newGameState) {
         // Raised for general state changes
-        if (onEventRaised != null) {
-            onEventRaised.Invoke(newGameState);
+        if (onGameStateChanged != null) {
+            onGameStateChanged.Invoke(newGameState);
         }
     }
 
