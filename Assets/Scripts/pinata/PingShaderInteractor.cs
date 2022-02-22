@@ -15,6 +15,8 @@ public class PingShaderInteractor : MonoBehaviour {
 
         // Check that the colliding object matches our layermask
         if ((layerMask.value & (1 << collision.collider.gameObject.layer)) > 0) {
+            if (PingShaderManager.Instance == null) return;
+
             PingShaderManager.Instance.AddPing(collision.GetContact(0).point);
             StartCoroutine(WaitForCooldown());
         }

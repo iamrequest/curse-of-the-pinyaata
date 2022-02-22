@@ -12,7 +12,7 @@ public class DialogRenderer : MonoBehaviour {
 	public DialogSettings dialogSettings;
 
 	// Optional: Only render for this actor. Greyscale the dialog BG image when someone else is talking
-	//public DialogueActor dialogActor;
+	public DialogueActor dialogActor;
 	public RectTransform uiTransform;
 
 	public Image actorNameImage, sentenceImage;
@@ -55,6 +55,11 @@ public class DialogRenderer : MonoBehaviour {
 	}
 
 	private void OnSubtitlesRequest(SubtitlesRequestInfo info) {
+		if (info.actor != dialogActor) {
+			uiTransform.gameObject.SetActive(false);
+			return;
+		}
+
 		// Show the dialog box
 		uiTransform.gameObject.SetActive(true);
 
@@ -132,5 +137,7 @@ public class DialogRenderer : MonoBehaviour {
 		return dialogSettings.GetRandomCharTypedSFX();
 	}
 
+	// TODO: Need to render multiple choice selection text plus option buttons
+	// This may be better done on the the player interactor, rather than a general dialog renderer
 	private void OnMultipleChoiceRequest(MultipleChoiceRequestInfo info) { }
 }

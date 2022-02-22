@@ -15,6 +15,8 @@ MonoBehaviour:
   activeDialogController: {fileID: 0}
   debugDialogController: {fileID: 0}
   startDebugDialogOnStart: 0
+  activeDialogEventChannel: {fileID: 11400000, guid: 8ac26d852e9c3d644a28e1cb2ff31e33,
+    type: 2}
 --- !u!1001 &6582687369375303445
 PrefabInstance:
   m_ObjectHideFlags: 0
