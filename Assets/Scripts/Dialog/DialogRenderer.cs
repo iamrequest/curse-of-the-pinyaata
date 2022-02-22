@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static NodeCanvas.DialogueTrees.UI.Examples.DialogueUGUI;
 
 public class DialogRenderer : MonoBehaviour {
@@ -14,8 +15,8 @@ public class DialogRenderer : MonoBehaviour {
 	//public DialogueActor dialogActor;
 	public RectTransform uiTransform;
 
-	public TextMeshProUGUI actorNameTextField;
-	public TextMeshProUGUI sentenceTextField;
+	public Image actorNameImage, sentenceImage;
+	public TextMeshProUGUI actorNameTextField, sentenceTextField;
 	public SubtitleDelays subtitleDelays = new SubtitleDelays();
 
 	private bool sentenceSkipRequested;
@@ -63,6 +64,10 @@ public class DialogRenderer : MonoBehaviour {
 		actorNameTextField.text = info.actor.name;
 
 		sentenceSkipRequested = false;
+
+		// Set the tint of the dialog box images
+		actorNameImage.color = info.actor.dialogueColor;
+		sentenceImage.color = info.actor.dialogueColor;
 
 		// Start a new coroutine to type out each character
 		if (typeSentenceCoroutine != null) StopCoroutine(typeSentenceCoroutine);
