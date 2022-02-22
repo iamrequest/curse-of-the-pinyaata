@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3802,6 +3802,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3028020155b2fe34abd5dec5304fb032, type: 3}
+--- !u!224 &790146717 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+    type: 3}
+  m_PrefabInstance: {fileID: 251850991515712680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &795081355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4489,8 +4495,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 824577902}
+  - {fileID: 790146717}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &882404207
 MonoBehaviour:
@@ -4551,14 +4558,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStateEventChannel: {fileID: 11400000, guid: 7368ba1356e34684d828411b1ba689b6,
     type: 2}
-  activeDialogEventChannel: {fileID: 11400000, guid: 8ac26d852e9c3d644a28e1cb2ff31e33,
-    type: 2}
   sceneManagerEventChannel: {fileID: 11400000, guid: d7071db8e19534a4d86c100bfc926562,
     type: 2}
-  preGameDialog: {fileID: 882404208}
+  dialogTreeController: {fileID: 882404208}
+  dialogActor: {fileID: 882404205}
+  preGameDialog: {fileID: 11400000, guid: 1bb715c25d7346b42a51edc06199a091, type: 2}
   startPreGameDialogAfterDelay: 1
   preGameDialogDelay: 1
-  postGameDialog: {fileID: 0}
+  postGameDialog: {fileID: 11400000, guid: 82ffd4d568ad3e247afc57512679ed68, type: 2}
   startPostGameDialogAfterDelay: 1
   postGameDialogDelay: 1
   postGameSceneLoadDelay: 3
@@ -9860,7 +9867,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 882404206}
     m_Modifications:
     - target: {fileID: 251850989671053270, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
@@ -9891,7 +9898,7 @@ PrefabInstance:
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
@@ -9936,7 +9943,7 @@ PrefabInstance:
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.25
+      value: 2.0674589
       objectReference: {fileID: 0}
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
@@ -9961,12 +9968,12 @@ PrefabInstance:
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1
+      value: 0.19028783
       objectReference: {fileID: 0}
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2
+      value: 0.676074
       objectReference: {fileID: 0}
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
@@ -9983,6 +9990,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468135, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: dialogActor
+      value: 
+      objectReference: {fileID: 882404205}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a945d6c5075c9a64497549ee2fba7382, type: 3}
 --- !u!1001 &7479831586363501899

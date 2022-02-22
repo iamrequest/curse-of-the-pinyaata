@@ -9588,9 +9588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eeb602f39632ba409f6789f5873813e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeDialogEventChannel: {fileID: 11400000, guid: 8ac26d852e9c3d644a28e1cb2ff31e33,
-    type: 2}
-  dialogTree: {fileID: 2092679060}
+  dialogTreeController: {fileID: 2092679060}
   startAfterDelay: 1
   dialogStartDelay: 1
 --- !u!114 &2092679059

@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour {
             Debug.LogError("Multiple GameManager components detected. This is probably a bug.");
             Destroy(this);
         }
+
+        gameState = GameState.FINISHED;
     }
 
     private void OnEnable() {
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour {
         // Start the game, and game timer
         gameState = GameState.ACTIVE;
         gameStateEventChannel.OnGameStateChanged(gameState);
+        Debug.Log("Starting game");
 
         gameTimerCoroutine = StartCoroutine(EndGameAfterDelay());
 
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour {
 
         gameState = GameState.FINISHED;
         gameStateEventChannel.OnGameStateChanged(gameState);
+        Debug.Log("Finishing game");
 
         // Stop the game timer
         if (gameTimerCoroutine != null) {

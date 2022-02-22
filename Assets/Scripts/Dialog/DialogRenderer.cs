@@ -44,6 +44,7 @@ public class DialogRenderer : MonoBehaviour {
 
     void Update() { }
 
+	// TODO: Hook this up to an event in ActiveDialogListener
 	public void SkipSentence() {
 		sentenceSkipRequested = true;
 	}
@@ -52,6 +53,12 @@ public class DialogRenderer : MonoBehaviour {
 	private void OnDialogueStarted(DialogueTree dialogueTree) { }
 	private void OnDialogueFinished(DialogueTree dialogueTree) { 
 		uiTransform.gameObject.SetActive(false);
+
+		// If a sentence is actively being typed, then stop typing
+		if (typeSentenceCoroutine != null) {
+			StopCoroutine(typeSentenceCoroutine);
+			typeSentenceCoroutine = null;
+		}
 	}
 
 	private void OnSubtitlesRequest(SubtitlesRequestInfo info) {
@@ -89,6 +96,10 @@ public class DialogRenderer : MonoBehaviour {
 				sentenceTextField.maxVisibleCharacters = info.statement.text.Length;
 				break;
 			}
+
+			// Note: This doesn't handle the case where we have inline html tags in the text payload (eg: <b>this is some bold text</b>)
+			// TODO: If we see a '<' character, search ahead for a '>' character, and add some number to the loop index to jump ahead
+			//	This would be good enough for now, although we would also have to consider escaped brackets. Not an issue for the text content of this game.
 
 			// Per-character delay
 			yield return new WaitForSeconds(GetCharTypedDelay(info.statement.text[0]));

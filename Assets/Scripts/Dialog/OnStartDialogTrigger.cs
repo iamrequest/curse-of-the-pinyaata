@@ -5,29 +5,29 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class OnStartDialogTrigger : MonoBehaviour {
-    public ActiveDialogEventChannel activeDialogEventChannel;
-    public DialogueTreeController dialogTree;
+    public DialogueTreeController dialogTreeController;
     public bool startAfterDelay;
     public float dialogStartDelay;
 
     private void OnValidate() {
-        if (!dialogTree) {
-            dialogTree = GetComponent<DialogueTreeController>();
+        if (!dialogTreeController) {
+            dialogTreeController = GetComponent<DialogueTreeController>();
         }
     }
 
     public void Start() {
-        if (dialogTree) {
+        if (dialogTreeController) {
             if (startAfterDelay) {
                 StartCoroutine(StartDialogAfterDelay());
             } else {
-                dialogTree.StartDialogue();
+                dialogTreeController.StartDialogue();
             }
         }
     }
 
     private IEnumerator StartDialogAfterDelay() {
         yield return new WaitForSeconds(dialogStartDelay);
-        activeDialogEventChannel.StartDialog(dialogTree);
+        dialogTreeController.StartDialogue();
+        ActiveDialogListener.Instance.onDialogStarted(dialogTreeController);
     }
 }

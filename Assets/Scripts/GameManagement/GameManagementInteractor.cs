@@ -6,22 +6,19 @@ using UnityEngine;
 
 public class GameManagementInteractor : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
-    public ActiveDialogEventChannel activeDialogEventChannel;
     public SceneManagerEventChannel sceneManagerEventChannel;
 
     // TODO: Fetch the appropriate pre/post-game dialog from the progression manager, once that's implemented
-    public DialogueTreeController preGameDialog;
+    public DialogueTreeController dialogTreeController;
+    public DialogActorCustom dialogActor;
+    public DialogueTree preGameDialog;
     public bool startPreGameDialogAfterDelay;
     public float preGameDialogDelay;
 
-    public DialogueTreeController postGameDialog;
+    public DialogueTree postGameDialog;
     public bool startPostGameDialogAfterDelay;
     public float postGameDialogDelay;
     public float postGameSceneLoadDelay;
-
-    private void OnEnable() {
-        gameStateEventChannel.onGameStateChanged += OnGameStateChanged;
-    }
 
     private void OnDisable() {
         gameStateEventChannel.onGameStateChanged -= OnGameStateChanged;
@@ -33,12 +30,15 @@ public class GameManagementInteractor : MonoBehaviour {
     }
 
     public void Start() {
+        gameStateEventChannel.onGameStateChanged += OnGameStateChanged;
+
         // Start pre-game dialog
         if (preGameDialog) {
             if (startPreGameDialogAfterDelay) {
                 StartCoroutine(StartPreGameDialogAfterDelay());
             } else {
-                activeDialogEventChannel.StartDialog(preGameDialog);
+                dialogTreeController.StartDialogue(preGameDialog, dialogActor, null);
+                ActiveDialogListener.Instance.OnDialogStart(dialogTreeController);
             }
         }
     }
@@ -50,7 +50,13 @@ public class GameManagementInteractor : MonoBehaviour {
 
     private IEnumerator StartPreGameDialogAfterDelay() {
         yield return new WaitForSeconds(preGameDialogDelay);
-        activeDialogEventChannel.StartDialog(preGameDialog);
+        dialogTreeController.StartDialogue(preGameDialog, dialogActor, null);
+        ActiveDialogListener.Instance.OnDialogStart(dialogTreeController);
+        ActiveDialogListener.Instance.onDialogFinished += OnPreDialogFinished;
+    }
+
+    private void OnPreDialogFinished(DialogueTreeController dialogueTreeController) {
+        ActiveDialogListener.Instance.onDialogFinished -= OnPreDialogFinished;
 
         // This may need to be configurable
         gameStateEventChannel.DoStartGame();
@@ -58,13 +64,14 @@ public class GameManagementInteractor : MonoBehaviour {
 
     private IEnumerator StartPostGameDialogAfterDelay() {
         yield return new WaitForSeconds(postGameDialogDelay);
-        activeDialogEventChannel.StartDialog(postGameDialog);
-        activeDialogEventChannel.onDialogFinished += OnPostGameDialogComplete;
+        dialogTreeController.StartDialogue(postGameDialog, dialogActor, null);
+        ActiveDialogListener.Instance.OnDialogStart(dialogTreeController);
+        ActiveDialogListener.Instance.onDialogFinished += OnPostGameDialogComplete;
     }
 
 
-    private void OnPostGameDialogComplete() {
-        activeDialogEventChannel.onDialogFinished -= OnPostGameDialogComplete;
+    private void OnPostGameDialogComplete(DialogueTreeController dialogTreeController) {
+        ActiveDialogListener.Instance.onDialogFinished -= OnPostGameDialogComplete;
         StartCoroutine(LoadTitleSceneAfterDelay());
     }
 
@@ -75,8 +82,9 @@ public class GameManagementInteractor : MonoBehaviour {
                 if (startPreGameDialogAfterDelay) {
                     StartCoroutine(StartPostGameDialogAfterDelay());
                 } else {
-                    activeDialogEventChannel.StartDialog(postGameDialog);
-                    activeDialogEventChannel.onDialogFinished += OnPostGameDialogComplete;
+                    dialogTreeController.StartDialogue(postGameDialog, dialogActor, null);
+                    ActiveDialogListener.Instance.OnDialogStart(dialogTreeController);
+                    ActiveDialogListener.Instance.onDialogFinished += OnPostGameDialogComplete;
                 }
             } else {
                 // If there's no dialog, just return to the main scene
