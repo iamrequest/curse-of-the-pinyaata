@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState {
-    ACTIVE, FINISHED
+    NOT_STARTED, ACTIVE, FINISHED
 }
 public class GameManager : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour {
             Debug.LogError("Multiple GameManager components detected. This is probably a bug.");
             Destroy(this);
         }
-
-        gameState = GameState.FINISHED;
     }
 
     private void OnEnable() {
@@ -75,15 +73,16 @@ public class GameManager : MonoBehaviour {
         ScoreManager.Instance.CompareScoreToHighScore();
     }
     private IEnumerator EndGameAfterDelay() {
-        gameDurationCurrent = 0f;
+        gameDurationCurrent = gameDurationTotal;
 
         // Wait until the game is over
-        while (gameDurationCurrent < gameDurationTotal) {
-            gameDurationCurrent += Time.deltaTime;
+        while (gameDurationCurrent > 0f) {
+            gameDurationCurrent -= Time.deltaTime;
             yield return new WaitForSeconds(Time.deltaTime);
         }
 
-        // Optional: Snap the elapsed time to max time here
+        // Snap the elapsed time to max time here
+        gameDurationCurrent = 0f;
         EndGame();
     }
 }

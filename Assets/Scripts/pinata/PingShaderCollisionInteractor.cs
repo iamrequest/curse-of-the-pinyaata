@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PingShaderInteractor : MonoBehaviour {
+/// <summary>
+/// Spawns a ping sweep on collision
+/// </summary>
+public class PingShaderCollisionInteractor : MonoBehaviour {
     [ReadOnly] [HideInEditorMode]
     public bool isOnCooldown;
     public float cooldown;

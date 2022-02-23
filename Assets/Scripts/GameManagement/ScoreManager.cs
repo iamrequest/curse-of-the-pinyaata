@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScoreManager : MonoBehaviour {
-    public int currentScore;
+    public float currentScore;
     // TODO: Depending on time constraints & UI options, consider making this a separate object with player name and timestamp
     public int maxNumHighScores = 10;
-    public List<int> highScores;
+    public List<float> highScores;
+    public UnityEvent onScoreUpdated;
 
     public static ScoreManager Instance { get; private set; }
 
@@ -25,22 +27,24 @@ public class ScoreManager : MonoBehaviour {
         for (int i = 0; i < maxNumHighScores; i++) { highScores.Add(0); }
     }
 
-    public void AddScore(int addedScore) {
+    public void AddScore(float addedScore) {
         if (GameManager.Instance.gameState == GameState.ACTIVE) {
             currentScore += addedScore;
+            onScoreUpdated.Invoke();
         }
     }
 
     [Button("Add 10 points")] [HideInEditorMode]
     [ButtonGroup("Debug")]
     private void DebugAddScore() {
-        AddScore(10);
+        AddScore(10f);
     }
 
     [Button] [HideInEditorMode]
     [ButtonGroup("Debug")]
     public void ResetScore() {
         currentScore = 0;
+        onScoreUpdated.Invoke();
     }
 
     /// <summary>
