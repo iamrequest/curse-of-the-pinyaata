@@ -1,0 +1,12 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class SaveData {
+    public List<float> highScores;
+
+    public SaveData(List<float> highScores) {
+        this.highScores = highScores;
+    }
+}

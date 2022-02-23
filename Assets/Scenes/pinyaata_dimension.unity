@@ -522,12 +522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ba72d2b00f78049a5228f9c3425612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loggedDamage:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   minDamage: 0
   maxDamage: 5
   minDamagingSpeed: 3

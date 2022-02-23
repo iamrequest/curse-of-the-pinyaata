@@ -1,10 +1,13 @@
 ﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ScoreManager : MonoBehaviour {
+    public GameStateEventChannel gameStateEventChannel;
+
     public float currentScore;
     // TODO: Depending on time constraints & UI options, consider making this a separate object with player name and timestamp
     public int maxNumHighScores = 10;
@@ -22,10 +25,29 @@ public class ScoreManager : MonoBehaviour {
         }
     }
 
+    private void OnEnable() {
+        gameStateEventChannel.onGameStateChanged += OnGameStateChanged;
+    }
+    private void OnDisable() {
+        gameStateEventChannel.onGameStateChanged -= OnGameStateChanged;
+    }
+
     private void Start() {
         // Init high scores list
         for (int i = 0; i < maxNumHighScores; i++) { highScores.Add(0); }
     }
+
+    private void OnGameStateChanged(GameState newGameState) {
+        switch (newGameState) {
+            case GameState.ACTIVE:
+                ResetScore();
+                break;
+            case GameState.FINISHED:
+                CompareScoreToHighScore();
+                break;
+        }
+    }
+
 
     public void AddScore(float addedScore) {
         if (GameManager.Instance.gameState == GameState.ACTIVE) {
@@ -59,6 +81,7 @@ public class ScoreManager : MonoBehaviour {
                 highScores.Insert(i, currentScore);
 
                 // TODO: Call score manager event channel here
+                SaveManager.Instance.SaveData();
                 return;
             }
         }

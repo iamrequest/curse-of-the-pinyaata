@@ -47,9 +47,6 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Starting game");
 
         gameTimerCoroutine = StartCoroutine(EndGameAfterDelay());
-
-        // Reset the score
-        ScoreManager.Instance.ResetScore();
     }
 
     [Button] [HideInEditorMode]
@@ -68,9 +65,6 @@ public class GameManager : MonoBehaviour {
             StopCoroutine(gameTimerCoroutine);
             gameTimerCoroutine = null;
         }
-
-        // Attempt to add this score to the high score board
-        ScoreManager.Instance.CompareScoreToHighScore();
     }
     private IEnumerator EndGameAfterDelay() {
         gameDurationCurrent = gameDurationTotal;

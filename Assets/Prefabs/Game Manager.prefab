@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 584623398989698329}
   - component: {fileID: 1042218126}
   - component: {fileID: 7511160320071650999}
+  - component: {fileID: 4114675366979864472}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -62,9 +63,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4c4fa87708962449fdb00083d634f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStateEventChannel: {fileID: 11400000, guid: 7368ba1356e34684d828411b1ba689b6,
+    type: 2}
   currentScore: 0
-  maxNumHighScores: 5
-  highScores: 
+  maxNumHighScores: 10
+  highScores: []
+  onScoreUpdated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1042218126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,5 +103,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d00e9624ccabce845984d8fc7cdfc2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4114675366979864472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584623398989698328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157c3dd965544a14c8d16d062b1478b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

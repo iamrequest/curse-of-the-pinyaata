@@ -5149,6 +5149,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 584623398989698329, guid: 38c1a50d8c1e407408577f5bc9c840e0,
+        type: 3}
+      propertyPath: maxNumHighScores
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 584623398989698331, guid: 38c1a50d8c1e407408577f5bc9c840e0,
         type: 3}
       propertyPath: m_RootOrder
@@ -10105,3 +10110,34 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7479831586363501899}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7479831586363501901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1692995635, guid: e0b3f0afb66b5534b9658e63e168e28b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7479831586363501899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7479831586363501902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7478521895940554252, guid: e0b3f0afb66b5534b9658e63e168e28b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7479831586363501899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7479831586363501903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7479831586363501902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f628c0f2b4434fd4aa702904cc467834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScoreText: {fileID: 7479831586363501901}
