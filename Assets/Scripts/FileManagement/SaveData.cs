@@ -5,8 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData {
     public List<float> highScores;
+    public bool isTutorialComplete;
 
-    public SaveData(List<float> highScores) {
-        this.highScores = highScores;
+    public SaveData() {
+        highScores = new List<float>();
     }
 }

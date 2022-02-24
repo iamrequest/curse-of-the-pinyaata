@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class ScoreManager : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
+    public SaveManagerEventChannel saveManagerEventChannel;
 
     public float currentScore;
     // TODO: Depending on time constraints & UI options, consider making this a separate object with player name and timestamp
@@ -27,14 +28,14 @@ public class ScoreManager : MonoBehaviour {
 
     private void OnEnable() {
         gameStateEventChannel.onGameStateChanged += OnGameStateChanged;
-    }
-    private void OnDisable() {
-        gameStateEventChannel.onGameStateChanged -= OnGameStateChanged;
+        saveManagerEventChannel.onLoad += ReadHighScoreFromSave;
+        saveManagerEventChannel.onDelete += ReadHighScoreFromSave;
     }
 
-    private void Start() {
-        // Init high scores list
-        for (int i = 0; i < maxNumHighScores; i++) { highScores.Add(0); }
+    private void OnDisable() {
+        gameStateEventChannel.onGameStateChanged -= OnGameStateChanged;
+        saveManagerEventChannel.onLoad -= ReadHighScoreFromSave;
+        saveManagerEventChannel.onDelete -= ReadHighScoreFromSave;
     }
 
     private void OnGameStateChanged(GameState newGameState) {
@@ -47,6 +48,21 @@ public class ScoreManager : MonoBehaviour {
                 break;
         }
     }
+
+    private void ReadHighScoreFromSave(SaveData saveData) {
+        highScores = saveData.highScores;
+
+        // If the save data has too few records (ie: less than the max number that we want to store), then add them now
+        //  Note: Need to cache high score count, to avoid for loop indexing errors (loop definition changes during for loop)
+        int numHighScoresInSave = saveData.highScores.Count;
+        for (int i = 0; i < maxNumHighScores - numHighScoresInSave; i++) highScores.Add(0f);
+
+        // If the save data has too many records, truncate the end of the high scores list
+        if (highScores.Count > maxNumHighScores) {
+            highScores.RemoveRange(maxNumHighScores, highScores.Count - maxNumHighScores);
+        }
+    }
+
 
 
     public void AddScore(float addedScore) {
@@ -80,7 +96,10 @@ public class ScoreManager : MonoBehaviour {
                 highScores.RemoveAt(highScores.Count - 1);
                 highScores.Insert(i, currentScore);
 
-                // TODO: Call score manager event channel here
+                // TODO: Call score manager event channel here, if that's needed
+
+                // Save scores to disk
+                SaveManager.Instance.saveData.highScores = highScores;
                 SaveManager.Instance.SaveData();
                 return;
             }

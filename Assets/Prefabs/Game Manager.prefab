@@ -65,6 +65,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStateEventChannel: {fileID: 11400000, guid: 7368ba1356e34684d828411b1ba689b6,
     type: 2}
+  saveManagerEventChannel: {fileID: 11400000, guid: 2962091337e782c4696eae7ad701588e,
+    type: 2}
   currentScore: 0
   maxNumHighScores: 10
   highScores: []
@@ -117,3 +119,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157c3dd965544a14c8d16d062b1478b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveManagerEventChannel: {fileID: 11400000, guid: 2962091337e782c4696eae7ad701588e,
+    type: 2}

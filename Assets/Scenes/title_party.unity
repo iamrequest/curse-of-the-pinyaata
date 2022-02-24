@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5149,11 +5149,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 584623398989698329, guid: 38c1a50d8c1e407408577f5bc9c840e0,
-        type: 3}
-      propertyPath: maxNumHighScores
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 584623398989698331, guid: 38c1a50d8c1e407408577f5bc9c840e0,
         type: 3}
       propertyPath: m_RootOrder
@@ -10140,4 +10135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f628c0f2b4434fd4aa702904cc467834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveManagerEventChannel: {fileID: 11400000, guid: 2962091337e782c4696eae7ad701588e,
+    type: 2}
   highScoreText: {fileID: 7479831586363501901}

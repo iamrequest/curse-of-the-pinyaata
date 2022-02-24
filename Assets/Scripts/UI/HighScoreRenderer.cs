@@ -6,17 +6,28 @@ using System;
 using Sirenix.OdinInspector;
 
 public class HighScoreRenderer : MonoBehaviour {
+    public SaveManagerEventChannel saveManagerEventChannel;
     public TextMeshProUGUI highScoreText;
 
-    private void Start() {
-        try {
-            SaveManager.Instance.LoadData();
-            UpdateUI();
-        } catch (Exception e) {
-            Debug.LogError("Unable to read high scores from disk: " + e.Message);
-            RenderBlankUI();
-        }
+
+    private void OnEnable() {
+        saveManagerEventChannel.onSave += OnSaveDataChanged;
+        saveManagerEventChannel.onLoad += OnSaveDataChanged;
+        saveManagerEventChannel.onDelete += OnSaveDataChanged;
     }
+    private void OnDisable() {
+        saveManagerEventChannel.onSave -= OnSaveDataChanged;
+        saveManagerEventChannel.onLoad -= OnSaveDataChanged;
+        saveManagerEventChannel.onDelete -= OnSaveDataChanged;
+    }
+
+    private void Start() {
+        UpdateUI();
+    }
+    private void OnSaveDataChanged(SaveData updatedSaveData) {
+        UpdateUI();
+    }
+
 
     [Button]
     private void UpdateUI() {

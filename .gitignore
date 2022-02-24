@@ -71,6 +71,9 @@ crashlytics-build.properties
 /[Aa]ssets/[Uu]nity/
 
 
+# Ignoring symlink to save data
+save.json
+
 # -- Custom dir ignores
 # Builds and project images
 /itch.io

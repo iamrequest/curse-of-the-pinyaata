@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour {
         gameStateEventChannel.doStartGame -= StartGame;
         gameStateEventChannel.doStopGame -= EndGame;
     }
+    private void Start() {
+        DontDestroyOnLoad(gameObject);
+    }
 
 
     [Button] [HideInEditorMode]
