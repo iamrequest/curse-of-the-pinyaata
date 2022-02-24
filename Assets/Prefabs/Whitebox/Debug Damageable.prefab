@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 2307949249932681202}
   - component: {fileID: 2307949249932681203}
   - component: {fileID: 2307949249932681204}
+  - component: {fileID: 85605512}
   m_Layer: 0
   m_Name: Debug Damageable
   m_TagString: Untagged
@@ -204,7 +205,7 @@ MonoBehaviour:
   isInvincible: 0
   isInvincibleBeforeGame: 1
   healthCurrent: 0
-  healthMax: 10
+  healthMax: 15
   onDamaged:
     m_PersistentCalls:
       m_Calls: []
@@ -226,6 +227,26 @@ MonoBehaviour:
   debugTextField: {fileID: 2307949249954041702}
   onDestroyPoints: 50
   totalPoints: 10
+--- !u!114 &85605512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2307949249932681205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be9bef70b4644b4c93e4410162e55f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  confettiPrefab: {fileID: 2331910372382150014, guid: 7e00575fcd84ce241a90f7653254c0f7,
+    type: 3}
+  onDamagedNumConfettiRange: {x: 0, y: 2}
+  onDeathNumConfettiRange: {x: 3, y: 4}
+  upwardVelocityRange: {x: 3, y: 4}
+  lateralVelocityRange: {x: -1, y: 1}
+  rb: {fileID: 2307949249932681202}
+  destroyDelay: 1
 --- !u!1 &2307949249954041704
 GameObject:
   m_ObjectHideFlags: 0

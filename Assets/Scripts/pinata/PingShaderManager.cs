@@ -41,6 +41,9 @@ public class PingShaderManager : MonoBehaviour {
         pingSweeps = new List<PingSweepData>(maxNumPasses);
         for (int i = 0; i < maxNumPasses; i++) {
             pingSweeps.Add(new PingSweepData());
+
+            // Reset ping colors in materials
+            pingSweepMaterial.SetColor($"color_{i}", unusedColor);
         }
     }
 
@@ -50,6 +53,10 @@ public class PingShaderManager : MonoBehaviour {
 
     [Button] [HideInEditorMode]
     public void AddPing(Vector3 worldPosition) {
+        AddPing(worldPosition, GetRandomColor());
+    }
+
+    public void AddPing(Vector3 worldPosition, Color color) {
         // TODO: This should be optimized, to prevent iterating over the whole array each time we want to check if there's an available slot
         int index = GetEmptySlotForPingSweep();
         if (index == -1) {
@@ -61,7 +68,11 @@ public class PingShaderManager : MonoBehaviour {
         pingSweeps[index].activeDuration = 0f;
 
         pingSweepMaterial.SetVector($"posSource_{index}", worldPosition);
-        pingSweepMaterial.SetColor($"color_{index}", colors[Random.Range(0, colors.Count)]);
+        pingSweepMaterial.SetColor($"color_{index}", color);
+    }
+
+    public Color GetRandomColor() {
+        return colors[Random.Range(0, colors.Count)];
     }
 
     /// <summary>

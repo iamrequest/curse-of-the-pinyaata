@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManagementInteractor : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
@@ -10,16 +11,24 @@ public class GameManagementInteractor : MonoBehaviour {
 
     // TODO: Fetch the appropriate pre/post-game dialog from the progression manager, once that's implemented
     public DialogueTreeController dialogTreeController;
-    public DialogActorCustom dialogActor;
+    private DialogActorCustom dialogActor;
+
+    [Header("Pre-game")]
     public DialogueTree preGameDialog;
     public bool startPreGameDialogAfterDelay;
     public float preGameDialogDelay;
 
+    [Header("Post-game")]
     public DialogueTree postGameDialog;
     public bool startPostGameDialogAfterDelay;
     public float postGameDialogDelay;
     public float postGameSceneLoadDelay;
 
+    private void OnEnable() {
+        gameStateEventChannel.onGameStateChanged += OnGameStateChanged;
+
+        dialogActor = dialogTreeController.GetComponent<DialogActorCustom>();
+    }
     private void OnDisable() {
         gameStateEventChannel.onGameStateChanged -= OnGameStateChanged;
     }
@@ -30,8 +39,6 @@ public class GameManagementInteractor : MonoBehaviour {
     }
 
     public void Start() {
-        gameStateEventChannel.onGameStateChanged += OnGameStateChanged;
-
         // Start pre-game dialog
         if (preGameDialog) {
             if (startPreGameDialogAfterDelay) {
