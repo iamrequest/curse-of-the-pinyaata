@@ -22,6 +22,10 @@ public class ActiveDialogListener : MonoBehaviour {
 
     public UnityAction<DialogueTreeController> onDialogStarted;
     public UnityAction<DialogueTreeController> onDialogFinished;
+
+    // Before we start the dialog, all active actors in the scene will be asked to try to add themselves to the DialogTreeController's actor list
+    public UnityAction<DialogueTreeController> populateActorCallback;
+
     public DialogueTreeController activeDialogTreeController { get; private set; }
 
 

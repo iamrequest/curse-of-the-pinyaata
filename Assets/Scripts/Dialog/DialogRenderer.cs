@@ -122,7 +122,11 @@ public class DialogRenderer : MonoBehaviour {
 	private void PlayCharacterTypedSFX(SubtitlesRequestInfo info) {
 		// Play character SFX
 		DialogActorCustom actor = info.actor as DialogActorCustom;
-		Vector3 audioSourcePosition = actor ? actor.audioSourceTransform.position : transform.position;
+
+		Vector3 audioSourcePosition = transform.position;
+		if (actor != null) {
+			if(actor.audioSourceTransform) audioSourcePosition = actor.audioSourceTransform.position;
+		}
 
 		SFXPlayer.Instance.PlaySFXRandomPitch(GetCharacterTypedSFX(actor),
 			audioSourcePosition,

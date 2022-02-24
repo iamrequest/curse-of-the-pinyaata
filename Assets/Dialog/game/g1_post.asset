@@ -15,10 +15,8 @@ MonoBehaviour:
   _serializedGraph: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"Not
     bad kiddo."},"_position":{"x":637.0,"y":220.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"Let''s
     do this again."},"_position":{"x":614.0,"y":297.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"You''ll
-    come back, won''t you?"},"_position":{"x":612.0,"y":385.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"_position":{"x":647.3458,"y":477.1863},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Pinyaata","_id":"45c4803e-6eb8-414a-b0b6-cad45289798b","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
-  _objectReferences:
-  - {fileID: 0}
-  - {fileID: 0}
+    come back, won''t you?"},"_position":{"x":612.0,"y":385.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"_position":{"x":647.3458,"y":477.1863},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences: []
   _graphSource:
     _version: 3.22
     _category: 
@@ -26,7 +24,4 @@ MonoBehaviour:
     _translation: {x: -206, y: -187}
     _zoomFactor: 1
   _haltSerialization: 0
-  actorParameters:
-  - _keyName: Pinyaata
-    _id: 45c4803e-6eb8-414a-b0b6-cad45289798b
-    _actorObject: {fileID: 0}
+  actorParameters: []
