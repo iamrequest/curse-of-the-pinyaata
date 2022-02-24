@@ -21,8 +21,13 @@ public class PingShaderCollisionInteractor : MonoBehaviour {
     public bool isOnCooldown;
     public float cooldown;
 
+    [Header("Death")]
     public bool isLifetimeLimited;
     public float lifetime;
+    public float onDestroyShrinkDuration;
+    public AnimationCurve destroyAnimCurve;
+
+    private Coroutine destroyAfterDelayCoroutine;
 
     private void OnValidate() {
         m_renderer = GetComponent<Renderer>();
@@ -30,8 +35,30 @@ public class PingShaderCollisionInteractor : MonoBehaviour {
     }
 
     private void Start() {
-        if (isLifetimeLimited) Destroy(gameObject, lifetime);
+        if (isLifetimeLimited) {
+            destroyAfterDelayCoroutine = StartCoroutine(DestroyAfterLifetime());
+        }
     }
+
+    private IEnumerator DestroyAfterLifetime() {
+        yield return new WaitForSeconds(lifetime);
+        Destroy(gameObject);
+    }
+
+    private IEnumerator ShrinkThenDestroy() {
+        float t = 0f;
+        Vector3 originalScale = transform.localScale;
+
+        while (t < onDestroyShrinkDuration) {
+            t += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, destroyAnimCurve.Evaluate(t / onDestroyShrinkDuration));
+            yield return null;
+        }
+
+        Destroy(gameObject);
+        yield return null;
+    }
+
 
     private void OnCollisionEnter(Collision collision) {
         if (isOnCooldown) return;
@@ -47,6 +74,10 @@ public class PingShaderCollisionInteractor : MonoBehaviour {
             } else {
                 PingShaderManager.Instance.AddPing(collision.GetContact(0).point);
             }
+
+            // If we created a ping, then stop the "destroy after lifetime" coroutine, and instead shrink to zero before destroying
+            if(destroyAfterDelayCoroutine != null) StopCoroutine(destroyAfterDelayCoroutine);
+            StartCoroutine(ShrinkThenDestroy());
 
             StartCoroutine(WaitForCooldown());
         }

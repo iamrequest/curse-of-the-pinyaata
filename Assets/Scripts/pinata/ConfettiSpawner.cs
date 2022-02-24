@@ -16,7 +16,8 @@ public class ConfettiSpawner : MonoBehaviour {
 
     [Header("Self Destruction")]
     public Rigidbody rb;
-    public float destroyDelay;
+    public float onDestroyShrinkDuration;
+    public AnimationCurve destroyAnimCurve;
 
     private void OnEnable() {
         damageable = GetComponent<Damageable>();
@@ -41,14 +42,28 @@ public class ConfettiSpawner : MonoBehaviour {
         // Disable collisions to avoid colliding with confetti
         rb.detectCollisions = false;
 
-        // Self destruct after a delay
-        Destroy(gameObject, destroyDelay);
+        // Shrink, then self-destroy after a delay
+        StartCoroutine(ShrinkThenDestroy());
 
         // Any self-vfx would go here (eg: dust particles)
 
         // Note: We also spawn confetti on damage, so plan to spawn less confetti on death
         // Optional: Cache the most recent amount of confetti spawned (on damage), and figure out how much to subtract from the onDeath range
         SpawnConfetti(onDeathNumConfettiRange);
+    }
+
+    private IEnumerator ShrinkThenDestroy() {
+        float t = 0f;
+        Vector3 originalScale = transform.localScale;
+
+        while (t < onDestroyShrinkDuration) {
+            t += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, destroyAnimCurve.Evaluate(t / onDestroyShrinkDuration));
+            yield return null;
+        }
+
+        Destroy(gameObject);
+        yield return null;
     }
 
     [Button][ButtonGroup]
