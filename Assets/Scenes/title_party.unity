@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1104,6 +1104,146 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 248064418}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &255790782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 255790783}
+  - component: {fileID: 255790787}
+  - component: {fileID: 255790786}
+  - component: {fileID: 255790785}
+  - component: {fileID: 255790784}
+  m_Layer: 0
+  m_Name: Title Scene Dialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &255790783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255790782}
+  m_LocalRotation: {x: -0.2588186, y: 0, z: -0, w: 0.965926}
+  m_LocalPosition: {x: 0.37363136, y: -0.033073902, z: -1.6087549}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2092679062}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &255790784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255790782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bebacb083799b148b65a443ebb7cc38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instigator: {fileID: 0}
+  behaviourTreeOwner: {fileID: 255790787}
+  dialogTreeController: {fileID: 255790785}
+  onDialogComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1891943574}
+        m_MethodName: EnableButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  dialogStartDelay: 1
+--- !u!114 &255790785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255790782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedExposedParameters: []
+  _boundGraphSerialization: 
+  _boundGraphObjectReferences: []
+  _boundGraphSource:
+    _version: 0
+    _category: 
+    _comments: 
+    _translation: {x: 0, y: 0}
+    _zoomFactor: 1
+  _firstActivation: 0
+  _enableAction: 1
+  _disableAction: 2
+  _lockBoundGraphPrefabOverrides: 1
+  _preInitializeSubGraphs: 0
+  _updateMode: 0
+  _graph: {fileID: 0}
+  _blackboard: {fileID: 255790786}
+--- !u!114 &255790786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255790782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentBlackboard: {fileID: 0}
+  _serializedBlackboard: '{"_variables":{}}'
+  _objectReferences: []
+  _serializedVariables: []
+--- !u!114 &255790787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255790782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedExposedParameters: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_condition":{"method":{"_baseInfo":"OnStartDialogPicker|GetProgressionBool|System.Boolean","_paramsInfo":"SaveDataKey"},"parameters":[{"_type":"SaveDataKey","_value":{"$content":0,"$type":"SaveDataKey"}}],"checkValue":{"_type":"System.Boolean","_value":{"$content":false,"$type":"System.Boolean"}},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"},"_position":{"x":505.0,"y":123.0},"$type":"NodeCanvas.BehaviourTrees.BinarySelector","$id":"0"},{"_action":{"method":{"_baseInfo":"OnStartDialogPicker|SelectDialog|System.Void","_paramsInfo":"NodeCanvas.DialogueTrees.DialogueTree"},"parameters":[{"_type":"NodeCanvas.DialogueTrees.DialogueTree","_value":{"$content":1,"$type":"NodeCanvas.DialogueTrees.DialogueTree"}}],"returnValue":{},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":511.8349,"y":219.1673},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"1"},{"_action":{"method":{"_baseInfo":"OnStartDialogPicker|SelectDialog|System.Void","_paramsInfo":"NodeCanvas.DialogueTrees.DialogueTree"},"parameters":[{"_type":"NodeCanvas.DialogueTrees.DialogueTree","_value":{"$content":1,"$type":"NodeCanvas.DialogueTrees.DialogueTree"}}],"returnValue":{},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":713.2692,"y":225.0845},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: ad68425d8276edf42bbad0768dc39450, type: 2}
+  _boundGraphSource:
+    _version: 3.22
+    _category: 
+    _comments: 
+    _translation: {x: 51, y: -25}
+    _zoomFactor: 0.9161243
+  _firstActivation: 0
+  _enableAction: 1
+  _disableAction: 0
+  _lockBoundGraphPrefabOverrides: 1
+  _preInitializeSubGraphs: 0
+  _updateMode: 0
+  _graph: {fileID: 0}
+  _blackboard: {fileID: 255790786}
 --- !u!1001 &260764213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8636,6 +8776,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1889334587}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1891943574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 39855315, guid: a9543e56389fc5a45bc75d95abaf3a7c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2032196573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb09538fb9a5474eaa8ad7c01b73836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1895023245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9575,81 +9727,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2066808400}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2092679057 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 204982693292439647, guid: a9543e56389fc5a45bc75d95abaf3a7c,
+--- !u!4 &2092679062 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 204982693292439633, guid: a9543e56389fc5a45bc75d95abaf3a7c,
     type: 3}
   m_PrefabInstance: {fileID: 2032196573}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2092679058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092679057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eeb602f39632ba409f6789f5873813e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogTreeController: {fileID: 2092679060}
-  startAfterDelay: 1
-  dialogStartDelay: 1
---- !u!114 &2092679059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092679057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{}}'
-  _objectReferences: []
-  _serializedVariables: []
---- !u!114 &2092679060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092679057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"Surprise!\n(Press
-    the primary button to advance dialog)"},"_actorName":"Mom","_actorParameterID":"67086cf9-885c-4314-9e8c-057558891a20","_position":{"x":461.1626,"y":-39.7277},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"Happy
-    Birthday, Kiddo!"},"_actorName":"Dad","_actorParameterID":"cae3b77a-69f6-463c-b492-aa5a9df052e0","_position":{"x":464.045,"y":65.51222},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"I
-    suppose it''s reasonable that you wouldn''t be surprised..."},"_actorName":"Mom","_actorParameterID":"67086cf9-885c-4314-9e8c-057558891a20","_position":{"x":458.0,"y":169.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"It''s
-    your birthday after all!"},"_actorName":"Mom","_actorParameterID":"67086cf9-885c-4314-9e8c-057558891a20","_position":{"x":464.0,"y":251.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"statement":{"_text":"Well,
-    everyone''s here to celebrate with you. Why don''t you say hi to everyone?"},"_actorName":"Mom","_actorParameterID":"67086cf9-885c-4314-9e8c-057558891a20","_position":{"x":452.0,"y":334.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"statement":{"_text":"When
-    you''re ready, we can play <i>Hit the Pinata</i>!"},"_actorName":"Mom","_actorParameterID":"67086cf9-885c-4314-9e8c-057558891a20","_position":{"x":460.0,"y":426.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"5"},{"_action":{"method":{"_baseInfo":"UIPhysicsButton|EnableButton|System.Void","_paramsInfo":""},"parameters":[],"returnValue":{},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":487.0,"y":517.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"6"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Mom","_id":"67086cf9-885c-4314-9e8c-057558891a20","_actorObject":1},{"_keyName":"Dad","_id":"cae3b77a-69f6-463c-b492-aa5a9df052e0","_actorObject":2}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
-  _boundGraphObjectReferences:
-  - {fileID: 0}
-  - {fileID: 481386479}
-  - {fileID: 992671608}
-  _boundGraphSource:
-    _version: 3.22
-    _category: 
-    _comments: 
-    _translation: {x: 268, y: 58}
-    _zoomFactor: 0.6014634
-  _firstActivation: 0
-  _enableAction: 1
-  _disableAction: 2
-  _lockBoundGraphPrefabOverrides: 1
-  _preInitializeSubGraphs: 0
-  _updateMode: 0
-  _graph: {fileID: 0}
-  _blackboard: {fileID: 2092679059}
 --- !u!1001 &2096594144
 PrefabInstance:
   m_ObjectHideFlags: 0
