@@ -116,7 +116,6 @@ GameObject:
   - component: {fileID: 2716851142505558461}
   - component: {fileID: 2716851142505558460}
   - component: {fileID: 2716851142505558459}
-  - component: {fileID: 1150602586}
   - component: {fileID: 99068717}
   m_Layer: 0
   m_Name: Bat
@@ -268,23 +267,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1150602586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2716851142505558462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 809d73b5f80e29f4d82d7a34f9a2e7c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOnCooldown: 0
-  cooldown: 0.3
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!114 &99068717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,12 +279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ba72d2b00f78049a5228f9c3425612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loggedDamage:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   minDamage: 0
   maxDamage: 5
   minDamagingSpeed: 3
