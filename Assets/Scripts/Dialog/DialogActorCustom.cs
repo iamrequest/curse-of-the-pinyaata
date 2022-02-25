@@ -1,6 +1,5 @@
 ﻿using NodeCanvas.DialogueTrees;
 using Sirenix.OdinInspector;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +8,8 @@ using UnityEngine;
 /// Not sure how better to name this class. Literally just a DialogActor with a few extra fields for per-actor customization
 /// </summary>
 public class DialogActorCustom : DialogueActor {
+    public Animator animator;
+    public Vector2 animatorSpeedRange;
     [Tooltip("The transform that determines where the audio source will play at")]
     public Transform audioSourceTransform;
     public List<AudioClip> characterTypedSFX;
@@ -22,6 +23,10 @@ public class DialogActorCustom : DialogueActor {
     }
     private void OnDisable() {
         ActiveDialogListener.Instance.populateActorCallback -= AddActorReference;
+    }
+
+    private void Start() {
+        if(animator) animator.speed = Random.Range(animatorSpeedRange.x, animatorSpeedRange.y);
     }
 
     private void AddActorReference(DialogueTreeController dialogueTreeController) {
