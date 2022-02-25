@@ -541,6 +541,7 @@ GameObject:
   - component: {fileID: 251850991091468132}
   - component: {fileID: 251850991091468131}
   - component: {fileID: 251850991091468135}
+  - component: {fileID: 3879922263871810014}
   m_Layer: 5
   m_Name: Dialog Renderer
   m_TagString: Untagged
@@ -641,6 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogSettings: {fileID: 11400000, guid: 5271d66e3f10e07489308c210aaed49a, type: 2}
+  dialogActor: {fileID: 0}
   uiTransform: {fileID: 251850990976571693}
   actorNameImage: {fileID: 251850990050702645}
   sentenceImage: {fileID: 251850990689102286}
@@ -651,3 +653,18 @@ MonoBehaviour:
     sentenceDelay: 0.5
     commaDelay: 0.1
     finalDelay: 1.2
+--- !u!114 &3879922263871810014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251850991091468130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc33177715a028c4e84c3dbcdb539604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPositionTransform: {fileID: 0}
+  alignPositionToTarget: 0
+  lookatPlayer: 1
