@@ -10,9 +10,13 @@ using UnityEngine;
 public class DialogActorCustom : DialogueActor {
     public Animator animator;
     public Vector2 animatorSpeedRange;
+
     [Tooltip("The transform that determines where the audio source will play at")]
     public Transform audioSourceTransform;
     public List<AudioClip> characterTypedSFX;
+    [Tooltip("Only play the char typed SFX every x characters. Useful for when the char typed SFX gets annoying when played frequently")]
+    [Range(1, 5)]
+    public int charTypedSFXSkip;
 
     private void OnEnable() {
         StartCoroutine(AddListenersAfterInit());

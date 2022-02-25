@@ -104,7 +104,7 @@ public class DialogRenderer : MonoBehaviour {
 			// Per-character delay
 			yield return new WaitForSeconds(GetCharTypedDelay(info.statement.text[0]));
 
-			PlayCharacterTypedSFX(info);
+			PlayCharacterTypedSFX(info, c);
 			sentenceTextField.maxVisibleCharacters++;
 		}
 
@@ -119,12 +119,14 @@ public class DialogRenderer : MonoBehaviour {
 		return subtitleDelays.characterDelay;
 	}
 
-	private void PlayCharacterTypedSFX(SubtitlesRequestInfo info) {
+	private void PlayCharacterTypedSFX(SubtitlesRequestInfo info, int charNum) {
 		// Play character SFX
 		DialogActorCustom actor = info.actor as DialogActorCustom;
 
+
 		Vector3 audioSourcePosition = transform.position;
 		if (actor != null) {
+			if (charNum % actor.charTypedSFXSkip != 0) return;
 			if(actor.audioSourceTransform) audioSourcePosition = actor.audioSourceTransform.position;
 		}
 

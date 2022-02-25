@@ -2521,7 +2521,9 @@ MonoBehaviour:
   animator: {fileID: 481386477}
   animatorSpeedRange: {x: 0.95, y: 1.05}
   audioSourceTransform: {fileID: 599741053}
-  characterTypedSFX: []
+  characterTypedSFX:
+  - {fileID: 8300000, guid: 760c74d7917cb5647b544401b11cb141, type: 3}
+  charTypedSFXSkip: 2
 --- !u!1001 &486989816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5889,7 +5891,9 @@ MonoBehaviour:
   animator: {fileID: 820812556}
   animatorSpeedRange: {x: 0.95, y: 1.05}
   audioSourceTransform: {fileID: 0}
-  characterTypedSFX: []
+  characterTypedSFX:
+  - {fileID: 8300000, guid: 760c74d7917cb5647b544401b11cb141, type: 3}
+  charTypedSFXSkip: 2
 --- !u!1001 &827633565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7522,7 +7526,9 @@ MonoBehaviour:
   animator: {fileID: 992671609}
   animatorSpeedRange: {x: 0.95, y: 1.05}
   audioSourceTransform: {fileID: 880128939}
-  characterTypedSFX: []
+  characterTypedSFX:
+  - {fileID: 8300000, guid: 8c22258091035364cbd3e1dd3b801d07, type: 3}
+  charTypedSFXSkip: 2
 --- !u!95 &992671609 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95919032313800222, guid: 08a2f1fda95d8de42ba936230a0610fe,
@@ -10528,7 +10534,9 @@ MonoBehaviour:
   animator: {fileID: 1629955210}
   animatorSpeedRange: {x: 0.95, y: 1.05}
   audioSourceTransform: {fileID: 0}
-  characterTypedSFX: []
+  characterTypedSFX:
+  - {fileID: 8300000, guid: 8c22258091035364cbd3e1dd3b801d07, type: 3}
+  charTypedSFXSkip: 2
 --- !u!1001 &1631514627
 PrefabInstance:
   m_ObjectHideFlags: 0

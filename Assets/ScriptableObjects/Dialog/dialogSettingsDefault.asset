@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: dialogSettingsDefault
   m_EditorClassIdentifier: 
   defaultCharacterTypedSFX:
-  - {fileID: 8300000, guid: a0d9ccf1ea0e87d4794965b3fa230c65, type: 3}
-  - {fileID: 8300000, guid: 5e5452015663bd141a0af3ff478c7272, type: 3}
-  - {fileID: 8300000, guid: 5d3613a99f5e0ac43a2acdfd87d61a4e, type: 3}
+  - {fileID: 8300000, guid: 83362202ec16f3e499526c36a1cafd62, type: 3}
