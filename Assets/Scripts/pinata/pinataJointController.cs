@@ -29,11 +29,11 @@ public class pinataJointController : MonoBehaviour {
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
-        connectedBody.gameObject.SetActive(false);
     }
 
     private void Start() {
         CreateJoint();
+        //connectedBody.gameObject.SetActive(false);
     }
 
 

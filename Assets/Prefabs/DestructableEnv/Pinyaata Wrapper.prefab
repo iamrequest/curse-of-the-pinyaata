@@ -142,6 +142,57 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &254846518968397694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535731044419294814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3194ac4964eceda45a5fea416f04ccf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugTextField: {fileID: 0}
+  isInvincible: 0
+  isInvincibleBeforeGame: 0
+  healthCurrent: 0
+  healthMax: 20
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  onHealthDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3657171567877518850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535731044419294814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bb5e64453f0f8841abb24e5b1934566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugTextField: {fileID: 0}
+  pointHolderSettings: {fileID: 11400000, guid: d43aa30ff00a13541b7c7da58370143c,
+    type: 2}
+--- !u!114 &5841957820368435244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535731044419294814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be9bef70b4644b4c93e4410162e55f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  confettiSettings: {fileID: 11400000, guid: be9706ef8c4607840a64315c13d49ae4, type: 2}
 --- !u!1001 &9021727937758368392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -206,6 +257,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48f2d923d4365d540ad9a7d6a176d9d7, type: 3}
+--- !u!1 &1535731044419294814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7522030612428408022, guid: 48f2d923d4365d540ad9a7d6a176d9d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 9021727937758368392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2169560274218421476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7145046920935284332, guid: 48f2d923d4365d540ad9a7d6a176d9d7,

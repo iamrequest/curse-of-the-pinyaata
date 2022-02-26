@@ -13,6 +13,10 @@ public class SaveManager : MonoBehaviour {
             if (m_saveData == null) {
                 // If we fail to load the data, this will return an empty SaveData instance
                 LoadData();
+
+                if (m_saveData == null) {
+                    m_saveData = new SaveData();
+                }
             }
 
             return m_saveData;
@@ -47,13 +51,16 @@ public class SaveManager : MonoBehaviour {
     [HideInEditorMode]
     public void LoadData() {
         try {
-            saveData = SaveSystem.LoadPlayerData();
+            m_saveData = SaveSystem.LoadPlayerData();
+            if (m_saveData == null) {
+                m_saveData = new SaveData();
+            }
         } catch (Exception e) {
-            Debug.LogError($"Unable to load save data: {e.Message}");
-            saveData = new SaveData();
+            Debug.LogWarning($"Unable to load save data. Creating new save data: {e.Message}");
+            m_saveData = new SaveData();
         }
 
-        saveManagerEventChannel.OnLoad(saveData); 
+        saveManagerEventChannel.OnLoad(m_saveData); 
     }
 
     [Button] [ButtonGroup("Save")]

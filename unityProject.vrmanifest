@@ -5,10 +5,10 @@
       "app_key": "application.generated.unity.vrjam2021.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\My Files\\documents\\unity\\brackeys-2022-1\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\My Files\\documents\\unity\\curse-of-the-pinyaata\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
-          "name": "vrjam2021 [Testing]"
+          "name": "curse-of-the-pinyaata [Testing]"
         }
       }
     }
