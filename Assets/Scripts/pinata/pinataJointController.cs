@@ -17,6 +17,14 @@ public class pinataJointController : MonoBehaviour {
             return joint != null;
         }
     }
+    public Transform AnchorTransform { get {
+            return anchor ? anchor : rb.transform;
+        }
+    }
+    public Transform ConnectedAnchorTransform { get {
+            return connectedBodyAnchor ? connectedBodyAnchor : connectedBody.transform;
+        }
+    }
 
 
     private void Awake() {
@@ -36,6 +44,8 @@ public class pinataJointController : MonoBehaviour {
         joint.connectedBody = connectedBody;
         joint.anchor = Vector3.zero;
         joint.connectedAnchor = Vector3.zero;
+
+        joint.minDistance = Vector3.Distance(ConnectedAnchorTransform.position, AnchorTransform.position);
         jointSettings.ApplyJointSettings(joint);
     }
 

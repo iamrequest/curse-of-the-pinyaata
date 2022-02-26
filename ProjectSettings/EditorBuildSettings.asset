@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/title_party.unity
     guid: 65c767a222f14e54490f822b9342b9c0
   - enabled: 1
-    path: Assets/Scenes/pinyaata_dimension.unity
+    path: Assets/Scenes/tutorial.unity
     guid: b28eddcd7360d1c49bc0f2b51a9fbdb6
   m_configObjects: {}

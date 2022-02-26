@@ -13,9 +13,10 @@ public class SceneManagerEventChannel : ScriptableObject {
     // These events are responsible for invoking an action
     public UnityAction<string> beforeSceneLoad;
 
-    public string titleSceneName, gameSceneName;
+    public string titleSceneName, tutorialSceneName, gameSceneName;
 
     public void LoadTitleScene() { LoadScene(titleSceneName); }
+    public void LoadTutorialScene() { LoadScene(tutorialSceneName);  }
     public void LoadGameScene() { LoadScene(gameSceneName);  }
 
     private void LoadScene(string sceneName) {

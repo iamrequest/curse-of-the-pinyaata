@@ -117,6 +117,8 @@ GameObject:
   - component: {fileID: 2716851142505558460}
   - component: {fileID: 2716851142505558459}
   - component: {fileID: 99068717}
+  - component: {fileID: 8441425304135429286}
+  - component: {fileID: 8441425304135429287}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -288,6 +290,41 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   pingSweepCooldown: 0.3
+--- !u!114 &8441425304135429286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716851142505558462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 258d25e1a2b14754b247fd5f28e9f682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SocketOrientation: {fileID: 0}
+  SocketScale: 1
+  CounterScale: {x: 1, y: 1, z: 1}
+  ScaleOverride: {fileID: 0}
+  SocketedClip: {fileID: 0}
+  UnsocketedClip: {fileID: 0}
+  LinkedGrabbables: []
+--- !u!114 &8441425304135429287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716851142505558462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ce8c2e44d5ba544bad960b6f9615af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  returnToSocketDelay: 3
+  onReturnToSocket:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2716851142979973483
 GameObject:
   m_ObjectHideFlags: 0

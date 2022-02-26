@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: sceneManagerEventChannel
   m_EditorClassIdentifier: 
   titleSceneName: title_party
+  tutorialSceneName: tutorial
   gameSceneName: pinyaata_dimension

@@ -21,19 +21,27 @@ public class BatSocketManager : MonoBehaviour {
         hvrGrabbable = GetComponent<HVRGrabbable>();
         meshRenderer = GetComponentInChildren<MeshRenderer>();
     }
+    private void Start() {
+        Player.Instance.chestSocket.TryGrab(hvrGrabbable, true, true);
+        meshRenderer.enabled = false;
+    }
 
     private void OnEnable() {
         hvrGrabbable.HandGrabbed.AddListener(OnGrabbed);
         hvrGrabbable.HandFullReleased.AddListener(OnFullRelease);
-        hvrGrabbable.StartingSocket.Grabbed.AddListener(OnPlacedInSocket);
-        hvrGrabbable.StartingSocket.Released.AddListener(OnRemovedFromSocket);
+        StartCoroutine(AddListenersAfterInit());
+    }
+    private IEnumerator AddListenersAfterInit() {
+        yield return new WaitForEndOfFrame();
+        Player.Instance.chestSocket.Grabbed.AddListener(OnPlacedInSocket);
+        Player.Instance.chestSocket.Released.AddListener(OnRemovedFromSocket);
     }
 
     private void OnDisable() {
         hvrGrabbable.HandGrabbed.RemoveListener(OnGrabbed);
         hvrGrabbable.HandFullReleased.RemoveListener(OnFullRelease);
-        hvrGrabbable.StartingSocket.Grabbed.RemoveListener(OnPlacedInSocket);
-        hvrGrabbable.StartingSocket.Released.RemoveListener(OnRemovedFromSocket);
+        Player.Instance.chestSocket.Grabbed.RemoveListener(OnPlacedInSocket);
+        Player.Instance.chestSocket.Released.RemoveListener(OnRemovedFromSocket);
     }
 
     private void OnGrabbed(HVRHandGrabber arg0, HVRGrabbable arg1) {
@@ -49,15 +57,16 @@ public class BatSocketManager : MonoBehaviour {
 
     private IEnumerator ReturnToSocketAfterDelay() {
         yield return new WaitForSeconds(returnToSocketDelay);
-        hvrGrabbable.StartingSocket.TryGrab(hvrGrabbable, true);
+        Player.Instance.chestSocket.TryGrab(hvrGrabbable, true);
         onReturnToSocket.Invoke();
     }
+
     private void OnRemovedFromSocket(HVRGrabberBase arg0, HVRGrabbable arg1) {
-        //meshRenderer.enabled = true;
+        meshRenderer.enabled = true;
     }
 
     private void OnPlacedInSocket(HVRGrabberBase arg0, HVRGrabbable arg1) {
-        //meshRenderer.enabled = false;
+        meshRenderer.enabled = false;
     }
 
 }
