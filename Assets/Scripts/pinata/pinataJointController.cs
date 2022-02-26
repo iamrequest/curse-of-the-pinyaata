@@ -29,6 +29,7 @@ public class pinataJointController : MonoBehaviour {
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
+        connectedBody.gameObject.SetActive(false);
     }
 
     private void Start() {
@@ -36,8 +37,8 @@ public class pinataJointController : MonoBehaviour {
     }
 
 
-    [Button]
-    [ButtonGroup("Joint Management")]
+    [Button] [ButtonGroup("Joint Management")]
+    [HideInEditorMode]
     public void CreateJoint() {
         joint = gameObject.AddComponent<SpringJoint>();
         joint.autoConfigureConnectedAnchor = false;
@@ -49,8 +50,8 @@ public class pinataJointController : MonoBehaviour {
         jointSettings.ApplyJointSettings(joint);
     }
 
-    [Button]
-    [ButtonGroup("Joint Management")]
+    [Button] [ButtonGroup("Joint Management")]
+    [HideInEditorMode]
     public void DestroyJoint() {
         Destroy(joint);
     }

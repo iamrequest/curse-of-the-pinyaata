@@ -12,9 +12,8 @@ using UnityEngine.Events;
 public class PointHolder : MonoBehaviour {
     private Damageable damageable;
     public TextMeshProUGUI debugTextField;
+    public PointHolderSettings pointHolderSettings;
 
-    public float onDestroyPoints;
-    public float totalPoints;
     [HideInEditorMode]
     public float remainingPoints { get; private set; }
 
@@ -37,7 +36,7 @@ public class PointHolder : MonoBehaviour {
         if (damageable.healthMax == 0f) return;
 
         // Calculate the fraction of damage done to the damageable this round
-        float awardedPoints = totalPoints * (appliedDamage / damageable.healthMax);
+        float awardedPoints = pointHolderSettings.totalPoints * (appliedDamage / damageable.healthMax);
         awardedPoints = Mathf.Clamp(awardedPoints, 0f, remainingPoints);
         remainingPoints -= awardedPoints;
         ScoreManager.Instance.AddScore(awardedPoints);
@@ -46,10 +45,10 @@ public class PointHolder : MonoBehaviour {
     }
 
     private void UpdateDebugUI() {
-        if (debugTextField) debugTextField.text = $"Pt: {remainingPoints.ToString("F1")}/{totalPoints.ToString("F1")}";
+        if (debugTextField) debugTextField.text = $"Pt: {remainingPoints.ToString("F1")}/{pointHolderSettings.totalPoints.ToString("F1")}";
     }
     private void AwardPointsOnDestroyed(Damageable damageable, Vector3 damageSorucePosition) {
-        ScoreManager.Instance.AddScore(onDestroyPoints);
+        ScoreManager.Instance.AddScore(pointHolderSettings.onDestroyPoints);
     }
 
     // Not right now

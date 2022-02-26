@@ -80,7 +80,7 @@ public class PinataWeapon : MonoBehaviour {
 
         if (relativeVelocityMagnitude < minDamagingSpeed) return 0f;
 
-        float damage = Mathfs.Remap(0f, maxDamagingSpeed, minDamage, maxDamage, relativeVelocityMagnitude);
+        float damage = Mathfs.RemapClamped(0f, maxDamagingSpeed, minDamage, maxDamage, relativeVelocityMagnitude);
         return damage;
     }
 }
