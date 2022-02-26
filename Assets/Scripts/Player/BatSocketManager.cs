@@ -8,6 +8,8 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(HVRGrabbable))]
 public class BatSocketManager : MonoBehaviour {
+    public GameStateEventChannel gameStateEventChannel;
+
     private HVRGrabbable hvrGrabbable;
     private MeshRenderer meshRenderer;
     private Coroutine returnToSocketCoroutine;
@@ -29,8 +31,10 @@ public class BatSocketManager : MonoBehaviour {
     private void OnEnable() {
         hvrGrabbable.HandGrabbed.AddListener(OnGrabbed);
         hvrGrabbable.HandFullReleased.AddListener(OnFullRelease);
+        gameStateEventChannel.onGameStateChanged += OnGameStateChanged;
         StartCoroutine(AddListenersAfterInit());
     }
+
     private IEnumerator AddListenersAfterInit() {
         yield return new WaitForEndOfFrame();
         Player.Instance.chestSocket.Grabbed.AddListener(OnPlacedInSocket);
@@ -40,6 +44,7 @@ public class BatSocketManager : MonoBehaviour {
     private void OnDisable() {
         hvrGrabbable.HandGrabbed.RemoveListener(OnGrabbed);
         hvrGrabbable.HandFullReleased.RemoveListener(OnFullRelease);
+        gameStateEventChannel.onGameStateChanged -= OnGameStateChanged;
         Player.Instance.chestSocket.Grabbed.RemoveListener(OnPlacedInSocket);
         Player.Instance.chestSocket.Released.RemoveListener(OnRemovedFromSocket);
     }
@@ -67,6 +72,16 @@ public class BatSocketManager : MonoBehaviour {
 
     private void OnPlacedInSocket(HVRGrabberBase arg0, HVRGrabbable arg1) {
         meshRenderer.enabled = false;
+    }
+
+    private void OnGameStateChanged(GameState newGameState) {
+        switch (newGameState) {
+            //case GameState.ACTIVE:
+                // The socket (this gameobject's parent) will be disabled at this point, so this script won't be able to execute. This case is handled in the Player script
+            case GameState.FINISHED:
+                ReturnToSocket(false);
+                break;
+        }
     }
 
     // --------------------------------------------------------------------------------

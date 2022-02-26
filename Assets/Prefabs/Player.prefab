@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edecca1b2d1a1148afe7791bf93dd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStateEventChannel: {fileID: 11400000, guid: 7368ba1356e34684d828411b1ba689b6,
+    type: 2}
   chestSocket: {fileID: 1746888046}
 --- !u!114 &3846218152981686635
 MonoBehaviour:
