@@ -239,38 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be9bef70b4644b4c93e4410162e55f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confettiPrefab: {fileID: 2331910372382150014, guid: 7e00575fcd84ce241a90f7653254c0f7,
-    type: 3}
-  onDamagedNumConfettiRange: {x: 0, y: 2}
-  onDeathNumConfettiRange: {x: 3, y: 4}
-  upwardVelocityRange: {x: 3, y: 4}
-  lateralVelocityRange: {x: -1, y: 1}
-  rb: {fileID: 2307949249932681202}
-  onDestroyShrinkDuration: 0.5
-  destroyAnimCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  confettiSettings: {fileID: 11400000, guid: be9706ef8c4607840a64315c13d49ae4, type: 2}
 --- !u!1 &2307949249954041704
 GameObject:
   m_ObjectHideFlags: 0

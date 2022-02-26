@@ -33,7 +33,7 @@ public class PointHolder : MonoBehaviour {
         UpdateDebugUI();
     }
 
-    private void AwardPointsOnDamaged(float appliedDamage, Damageable damageable) {
+    private void AwardPointsOnDamaged(float appliedDamage, Damageable damageable, Vector3 damageSourcePosition) {
         if (damageable.healthMax == 0f) return;
 
         // Calculate the fraction of damage done to the damageable this round
@@ -48,7 +48,7 @@ public class PointHolder : MonoBehaviour {
     private void UpdateDebugUI() {
         if (debugTextField) debugTextField.text = $"Pt: {remainingPoints.ToString("F1")}/{totalPoints.ToString("F1")}";
     }
-    private void AwardPointsOnDestroyed(Damageable damageable) {
+    private void AwardPointsOnDestroyed(Damageable damageable, Vector3 damageSorucePosition) {
         ScoreManager.Instance.AddScore(onDestroyPoints);
     }
 

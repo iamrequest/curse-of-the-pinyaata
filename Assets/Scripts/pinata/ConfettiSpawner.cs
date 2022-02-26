@@ -9,15 +9,8 @@ using UnityEngine;
 [RequireComponent(typeof(Damageable))]
 public class ConfettiSpawner : MonoBehaviour {
     private Damageable damageable;
-    [Header("Confetti")]
-    public GameObject confettiPrefab;
-    public Vector2 onDamagedNumConfettiRange, onDeathNumConfettiRange;
-    public Vector2 upwardVelocityRange, lateralVelocityRange;
-
-    [Header("Self Destruction")]
-    public Rigidbody rb;
-    public float onDestroyShrinkDuration;
-    public AnimationCurve destroyAnimCurve;
+    public ConfettiSpawnerSettings confettiSettings;
+    private Rigidbody rb;
 
     private void OnEnable() {
         damageable = GetComponent<Damageable>();
@@ -32,15 +25,15 @@ public class ConfettiSpawner : MonoBehaviour {
 
     [Button("On Damaged")] [ButtonGroup]
     [HideInEditorMode]
-    private void OnDamagedVFX(float damage, Damageable damageable) {
-        SpawnConfetti(onDamagedNumConfettiRange);
+    private void OnDamagedVFX(float damage, Damageable damageable, Vector3 damageSourcePosition) {
+        SpawnConfetti(confettiSettings.onDamagedNumConfettiRange, damageSourcePosition);
     }
 
     [Button("On Death")] [ButtonGroup]
     [HideInEditorMode]
-    private void SelfDestruct(Damageable damageable) {
+    private void SelfDestruct(Damageable damageable, Vector3 damageSourcePosition) {
         // Disable collisions to avoid colliding with confetti
-        rb.detectCollisions = false;
+        if(rb) rb.detectCollisions = false;
 
         // Shrink, then self-destroy after a delay
         StartCoroutine(ShrinkThenDestroy());
@@ -49,16 +42,16 @@ public class ConfettiSpawner : MonoBehaviour {
 
         // Note: We also spawn confetti on damage, so plan to spawn less confetti on death
         // Optional: Cache the most recent amount of confetti spawned (on damage), and figure out how much to subtract from the onDeath range
-        SpawnConfetti(onDeathNumConfettiRange);
+        SpawnConfetti(confettiSettings.onDeathNumConfettiRange, damageSourcePosition);
     }
 
     private IEnumerator ShrinkThenDestroy() {
         float t = 0f;
         Vector3 originalScale = transform.localScale;
 
-        while (t < onDestroyShrinkDuration) {
+        while (t < confettiSettings.onDestroyShrinkDuration) {
             t += Time.deltaTime;
-            transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, destroyAnimCurve.Evaluate(t / onDestroyShrinkDuration));
+            transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, confettiSettings.destroyAnimCurve.Evaluate(t / confettiSettings.onDestroyShrinkDuration));
             yield return null;
         }
 
@@ -68,27 +61,27 @@ public class ConfettiSpawner : MonoBehaviour {
 
     [Button][ButtonGroup]
     [HideInEditorMode]
-    private void SpawnConfetti(Vector2 numConfettiRange) {
+    private void SpawnConfetti(Vector2 numConfettiRange, Vector3 sourcePosition) {
         // Adding 1 to max num confetti to make the range inclusive
         int numConfettiToSpawn = Mathf.RoundToInt(UnityEngine.Random.Range(numConfettiRange.x, numConfettiRange.y + 1f));
         for (int i = 0; i < numConfettiToSpawn; i++) {
-            SpawnSingleConfetti();
+            SpawnSingleConfetti(sourcePosition);
         }
     }
 
     [Button][ButtonGroup]
     [HideInEditorMode]
-    private void SpawnSingleConfetti() {
-        GameObject confetti = Instantiate(confettiPrefab, transform.position, UnityEngine.Random.rotation);
+    private void SpawnSingleConfetti(Vector3 spawnPosition) {
+        GameObject confetti = Instantiate(confettiSettings.confettiPrefab, spawnPosition, UnityEngine.Random.rotation);
 
         if(confetti.TryGetComponent(out PingShaderCollisionInteractor shaderInteractor)) {
             // Apply random color
             shaderInteractor.m_renderer.material.color = PingShaderManager.Instance.GetRandomColor();
 
             // Add random velocity
-            Vector3 force = new Vector3(UnityEngine.Random.Range(lateralVelocityRange.x, lateralVelocityRange.y),
-                UnityEngine.Random.Range(upwardVelocityRange.x, upwardVelocityRange.y),
-                UnityEngine.Random.Range(lateralVelocityRange.x, lateralVelocityRange.y));
+            Vector3 force = new Vector3(UnityEngine.Random.Range(confettiSettings.lateralVelocityRange.x, confettiSettings.lateralVelocityRange.y),
+                UnityEngine.Random.Range(confettiSettings.upwardVelocityRange.x, confettiSettings.upwardVelocityRange.y),
+                UnityEngine.Random.Range(confettiSettings.lateralVelocityRange.x, confettiSettings.lateralVelocityRange.y));
 
             shaderInteractor.rb.AddForce(force, ForceMode.Impulse);
 

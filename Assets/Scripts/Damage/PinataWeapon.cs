@@ -63,7 +63,7 @@ public class PinataWeapon : MonoBehaviour {
         // TODO: If I do ragdolls, this needs to be updated to get the root damageable
         if (collision.rigidbody.TryGetComponent(out Damageable damageable)) {
             float damage = CalculateDamage(collision.relativeVelocity.magnitude);
-            damageable.ApplyDamage(damage);
+            damageable.ApplyDamage(damage, collision.GetContact(0).point);
             StartCoroutine(WaitForDamageCooldown());
         }
     }

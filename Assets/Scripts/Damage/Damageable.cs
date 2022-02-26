@@ -28,6 +28,10 @@ public class Damageable : MonoBehaviour {
     }
 
     public void ApplyDamage(float incomingDamage) {
+        ApplyDamage(incomingDamage, transform.position);
+    }
+
+    public void ApplyDamage(float incomingDamage, Vector3 damagePosition) {
         if (healthCurrent <= 0f) return;
         if (isInvincible) return;
         if (isInvincibleBeforeGame) {
@@ -40,10 +44,10 @@ public class Damageable : MonoBehaviour {
         float appliedDamage = originalHealth - healthCurrent;
 
         // Invoke event
-        onDamaged.Invoke(appliedDamage, this);
+        onDamaged.Invoke(appliedDamage, this, damagePosition);
 
         if (healthCurrent <= 0) {
-            onHealthDepleted.Invoke(this);
+            onHealthDepleted.Invoke(this, damagePosition);
         }
 
         UpdateDebugUI();
