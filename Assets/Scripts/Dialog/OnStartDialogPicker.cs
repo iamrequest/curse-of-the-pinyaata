@@ -1,14 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class OnStartDialogPicker : DialogPicker {
     public float dialogStartDelay;
 
+
+    private void OnEnable() {
+        StartCoroutine(AfterInit());
+    }
+
+
     protected override void Start() {
         base.Start();
         // Pick some dialog to say, and start it as soon as it's picked
         SelectDialogViaBehaviourTree(StartDialogAfterPicked);
+    }
+    private IEnumerator AfterInit() {
+        yield return new WaitForEndOfFrame();
+        BGMManager.Instance.PlaySong(0);
     }
 
     private void StartDialogAfterPicked(bool obj) {

@@ -19,12 +19,16 @@ public class TutorialDialogInteractor : MonoBehaviour {
     }
     private void Start() {
         // For some reason, I need to add a bit of delay before I can start dialog. Maybe to let something init?
+        StartCoroutine(AfterInit());
         StartCoroutine(StartDialogAfterDelay());
     }
 
-    private IEnumerator StartDialogAfterDelay() {
+    private IEnumerator AfterInit() {
         yield return new WaitForEndOfFrame();
+        BGMManager.Instance.FadeToStop();
         PingShaderManager.Instance.ApplyBlindfoldImmediate();
+    }
+    private IEnumerator StartDialogAfterDelay() {
         yield return new WaitForSeconds(dialogStartDelay);
         dialogueTreeController.StartDialogue(dialogActor);
         ActiveDialogListener.Instance.OnDialogStart(dialogueTreeController);
