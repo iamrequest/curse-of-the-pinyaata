@@ -16,29 +16,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8159293318261484109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2549141990992423036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3194ac4964eceda45a5fea416f04ccf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugTextField: {fileID: 0}
-  isInvincible: 0
-  isInvincibleBeforeGame: 0
-  healthCurrent: 0
-  healthMax: 5
-  onDamaged:
-    m_PersistentCalls:
-      m_Calls: []
-  onHealthDepleted:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4366592401849693551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +44,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confettiSettings: {fileID: 11400000, guid: be9706ef8c4607840a64315c13d49ae4, type: 2}
+--- !u!114 &8159293318261484109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549141990992423036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3194ac4964eceda45a5fea416f04ccf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugTextField: {fileID: 0}
+  isInvincible: 0
+  isInvincibleBeforeGame: 1
+  healthCurrent: 0
+  healthMax: 5
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  onHealthDepleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2550766859145049850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1824996683898502, guid: 66924574c80a24a44bdf782e3e7635d0, type: 3}
       propertyPath: m_Name
-      value: SM_Prop_Controller_01 (1)
+      value: SM_Prop_Controller_01 (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4527185568398708, guid: 66924574c80a24a44bdf782e3e7635d0, type: 3}
       propertyPath: m_RootOrder
@@ -122,6 +122,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23945099080267510, guid: 66924574c80a24a44bdf782e3e7635d0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a9eb52f39778e2a4bad35d77f7224d24, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66924574c80a24a44bdf782e3e7635d0, type: 3}
 --- !u!1 &2549141990992423036 stripped

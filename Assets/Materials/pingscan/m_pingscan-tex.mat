@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: m_pingscan-tex
+  m_Shader: {fileID: -6465566751694194690, guid: 94f5bf9b7cc052b45a261ad6826f053f,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_BA3D8BE6:
+        m_Texture: {fileID: 2800000, guid: 63070be2573ac6640a080b00e06cc159, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_216E705: 0.5
+    - Vector1_C3BADBD9: 5.5
+    m_Colors:
+    - Color_481A9092: {r: 0.2235294, g: 0.2235294, b: 0.2235294, a: 1}
+    - Color_D6B182D2: {r: 0, g: 0, b: 0, a: 0}
+    - baseColor: {r: 0.24528271, g: 0.24528271, b: 0.24528271, a: 0}
+    - color_0: {r: 0, g: 0, b: 0, a: 0}
+    - color_1: {r: 0, g: 0, b: 0, a: 0}
+    - color_2: {r: 0, g: 0, b: 0, a: 0}
+    - color_3: {r: 0, g: 0, b: 0, a: 0}
+    - color_4: {r: 0, g: 0, b: 0, a: 0}
+    - posSource_0: {r: 1.2589008, g: 1.9107238, b: 7.1462665, a: 10.045846}
+    - posSource_1: {r: 1.7977188, g: 0.010605715, b: 6.2528677, a: 10.052335}
+    - posSource_2: {r: 1.5283141, g: 0.77732193, b: 7.3245683, a: 10.026349}
+    - posSource_3: {r: 2.9692876, g: 1.5977249, b: 4.635744, a: 10.043567}
+    - posSource_4: {r: 2.9743433, g: 1.6080214, b: 4.633695, a: 10.043567}
+    - posSource_5: {r: 2.965098, g: 1.6150078, b: 4.639628, a: 10.043567}

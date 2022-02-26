@@ -33,7 +33,11 @@ public class pinataJointController : MonoBehaviour {
 
     private void Start() {
         CreateJoint();
-        //connectedBody.gameObject.SetActive(false);
+
+        // Hide the cube that the pinata is attached to
+        if (connectedBody.TryGetComponent(out Renderer renderer)) {
+           renderer.enabled = false;
+        }
     }
 
 

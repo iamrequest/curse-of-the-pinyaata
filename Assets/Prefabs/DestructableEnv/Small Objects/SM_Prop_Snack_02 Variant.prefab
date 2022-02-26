@@ -16,7 +16,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7122340234622211753
+--- !u!114 &2147297953804870994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -25,20 +25,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7066652096811548203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3194ac4964eceda45a5fea416f04ccf9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9be9bef70b4644b4c93e4410162e55f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugTextField: {fileID: 0}
-  isInvincible: 0
-  isInvincibleBeforeGame: 0
-  healthCurrent: 0
-  healthMax: 5
-  onDamaged:
-    m_PersistentCalls:
-      m_Calls: []
-  onHealthDepleted:
-    m_PersistentCalls:
-      m_Calls: []
+  confettiSettings: {fileID: 11400000, guid: be9706ef8c4607840a64315c13d49ae4, type: 2}
 --- !u!114 &4900113517519142137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +44,7 @@ MonoBehaviour:
   debugTextField: {fileID: 0}
   pointHolderSettings: {fileID: 11400000, guid: 84cf35b8c0138b149b5c72d9235af45f,
     type: 2}
---- !u!114 &2147297953804870994
+--- !u!114 &7122340234622211753
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,10 +53,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7066652096811548203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be9bef70b4644b4c93e4410162e55f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3194ac4964eceda45a5fea416f04ccf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confettiSettings: {fileID: 11400000, guid: be9706ef8c4607840a64315c13d49ae4, type: 2}
+  debugTextField: {fileID: 0}
+  isInvincible: 0
+  isInvincibleBeforeGame: 1
+  healthCurrent: 0
+  healthMax: 5
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  onHealthDepleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7067545613851154745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1475469422585618, guid: 10839a884277b9a4489465ab8fe96e52, type: 3}
       propertyPath: m_Name
-      value: SM_Prop_Snack_02
+      value: SM_Prop_Snack_02 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4945079338511918, guid: 10839a884277b9a4489465ab8fe96e52, type: 3}
       propertyPath: m_RootOrder

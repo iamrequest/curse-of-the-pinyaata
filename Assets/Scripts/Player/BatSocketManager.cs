@@ -21,9 +21,9 @@ public class BatSocketManager : MonoBehaviour {
         hvrGrabbable = GetComponent<HVRGrabbable>();
         meshRenderer = GetComponentInChildren<MeshRenderer>();
     }
+
     private void Start() {
-        Player.Instance.chestSocket.TryGrab(hvrGrabbable, true, true);
-        meshRenderer.enabled = false;
+        ReturnToSocket(true);
     }
 
     private void OnEnable() {
@@ -44,6 +44,7 @@ public class BatSocketManager : MonoBehaviour {
         Player.Instance.chestSocket.Released.RemoveListener(OnRemovedFromSocket);
     }
 
+
     private void OnGrabbed(HVRHandGrabber arg0, HVRGrabbable arg1) {
         if (returnToSocketCoroutine != null) {
             StopCoroutine(returnToSocketCoroutine);
@@ -57,8 +58,7 @@ public class BatSocketManager : MonoBehaviour {
 
     private IEnumerator ReturnToSocketAfterDelay() {
         yield return new WaitForSeconds(returnToSocketDelay);
-        Player.Instance.chestSocket.TryGrab(hvrGrabbable, true);
-        onReturnToSocket.Invoke();
+        ReturnToSocket(false);
     }
 
     private void OnRemovedFromSocket(HVRGrabberBase arg0, HVRGrabbable arg1) {
@@ -69,4 +69,10 @@ public class BatSocketManager : MonoBehaviour {
         meshRenderer.enabled = false;
     }
 
+    // --------------------------------------------------------------------------------
+    private void ReturnToSocket(bool ignoreSocketSFX) {
+        hvrGrabbable.ForceRelease();
+        Player.Instance.chestSocket.TryGrab(hvrGrabbable, ignoreSocketSFX);
+        onReturnToSocket.Invoke();
+    }
 }

@@ -86,8 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DEBUG_UPDATE_PINGS: 1
-  pingSweepMaterial: {fileID: 2100000, guid: e64c02c30c604b3408a86fae481d9a3c, type: 2}
-  maxNumPasses: 3
+  pingSweepMaterial: {fileID: 2100000, guid: a9eb52f39778e2a4bad35d77f7224d24, type: 2}
+  maxNumPasses: 6
   pingSpeed: 5
   pingDuration: 2
   pingSweeps: []

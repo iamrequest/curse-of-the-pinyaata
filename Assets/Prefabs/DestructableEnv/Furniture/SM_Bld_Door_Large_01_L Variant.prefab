@@ -16,7 +16,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2006910353
+--- !u!114 &2006910351
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -25,20 +25,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8748060263602056986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3194ac4964eceda45a5fea416f04ccf9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9be9bef70b4644b4c93e4410162e55f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugTextField: {fileID: 0}
-  isInvincible: 0
-  isInvincibleBeforeGame: 0
-  healthCurrent: 0
-  healthMax: 25
-  onDamaged:
-    m_PersistentCalls:
-      m_Calls: []
-  onHealthDepleted:
-    m_PersistentCalls:
-      m_Calls: []
+  confettiSettings: {fileID: 11400000, guid: be9706ef8c4607840a64315c13d49ae4, type: 2}
 --- !u!114 &2006910352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +44,7 @@ MonoBehaviour:
   debugTextField: {fileID: 0}
   pointHolderSettings: {fileID: 11400000, guid: 998d2d26e72aa9b439247446af07fc4a,
     type: 2}
---- !u!114 &2006910351
+--- !u!114 &2006910353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,10 +53,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8748060263602056986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be9bef70b4644b4c93e4410162e55f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3194ac4964eceda45a5fea416f04ccf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confettiSettings: {fileID: 11400000, guid: be9706ef8c4607840a64315c13d49ae4, type: 2}
+  debugTextField: {fileID: 0}
+  isInvincible: 0
+  isInvincibleBeforeGame: 1
+  healthCurrent: 0
+  healthMax: 15
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  onHealthDepleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &8746753041994443930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1671228742992768, guid: 4632b902994c43d45911927023e78aaa, type: 3}
       propertyPath: m_Name
-      value: SM_Bld_Door_Large_01_L
+      value: SM_Bld_Door_Large_01_L Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4070938068084928, guid: 4632b902994c43d45911927023e78aaa, type: 3}
       propertyPath: m_RootOrder

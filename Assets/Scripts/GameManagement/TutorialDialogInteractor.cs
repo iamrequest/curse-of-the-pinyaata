@@ -8,6 +8,7 @@ public class TutorialDialogInteractor : MonoBehaviour {
     public SceneManagerEventChannel sceneManagerEventChannel;
     private DialogueTreeController dialogueTreeController;
     private DialogActorCustom dialogActor;
+
     [Range(0.1f, 1f)]
     public float dialogStartDelay = 1f;
     public bool batFirstGrab, pinataDestroyed;

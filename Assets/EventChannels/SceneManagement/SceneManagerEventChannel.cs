@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,9 +16,12 @@ public class SceneManagerEventChannel : ScriptableObject {
 
     public string titleSceneName, tutorialSceneName, gameSceneName;
 
+    [Button][ButtonGroup]
     public void LoadTitleScene() { LoadScene(titleSceneName); }
+    [Button][ButtonGroup]
     public void LoadTutorialScene() { LoadScene(tutorialSceneName);  }
-    public void LoadGameScene() { LoadScene(gameSceneName);  }
+    //[Button][ButtonGroup]
+    //public void LoadGameScene() { LoadScene(gameSceneName);  }
 
     private void LoadScene(string sceneName) {
         // Make sure that this scene exists in build settings
