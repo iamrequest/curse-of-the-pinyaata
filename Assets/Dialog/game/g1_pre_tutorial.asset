@@ -12,20 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3f478ef69fbe04fa9ed3664a8a443e, type: 3}
   m_Name: g1_pre_tutorial
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"Welcome
-    to the <b>Pinyaata dimension</b>"},"_position":{"x":576.3333,"y":138.001},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"Although,
-    you can''t see it, can you? You''re <color=#e2655d>blindfolded</color> after
-    all..."},"_position":{"x":610.6591,"y":214.664},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"Be
-    not afraid. Although it is dark, <color=#e2655d>no harm will come your way here</color>."},"_position":{"x":615.9924,"y":294.6628},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"Today
-    we''ll be playing <color=#e2655d>Hit the Pinyaata</color>."},"_position":{"x":612.6665,"y":366.3321},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"statement":{"_text":"You''ll
-    play won''t you? In return, I''ll give you <color=#e2655d>the Gift of Blind Sight</color>."},"_position":{"x":618.6665,"y":451.6655},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"statement":{"_text":"..."},"_position":{"x":881.6298,"y":111.8309},"$type":"NodeCanvas.DialogueTrees.StatementNode"},{"_action":{"setTo":1,"overrideAgent":{"_type":"UnityEngine.Transform"},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},"_position":{"x":889.039,"y":198.2863},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"6"},{"statement":{"_text":"This
-    is your enemy today."},"_position":{"x":875.0129,"y":339.828},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"7"},{"_position":{"x":652.679,"y":663.1851},"$type":"NodeCanvas.DialogueTrees.FinishNode"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _serializedGraph: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"..."},"_actorName":"Pinyaata","_actorParameterID":"cc339686-988d-4b78-87bf-56322ed016c0","_position":{"x":629.9304,"y":147.3222},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"And
+    on goes the blindfold."},"_actorName":"Pinyaata","_actorParameterID":"cc339686-988d-4b78-87bf-56322ed016c0","_position":{"x":596.0,"y":227.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"Welcome
+    to the <b>Pinyaata Dimension</b>."},"_actorName":"Pinyaata","_actorParameterID":"cc339686-988d-4b78-87bf-56322ed016c0","_position":{"x":558.0,"y":311.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"_position":{"x":624.0,"y":459.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"3"},{"_position":{"x":652.679,"y":663.1851},"$type":"NodeCanvas.DialogueTrees.FinishNode"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Pinyaata","_id":"cc339686-988d-4b78-87bf-56322ed016c0"}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _objectReferences: []
   _graphSource:
     _version: 3.22
     _category: 
     _comments: 
-    _translation: {x: -38, y: -20}
-    _zoomFactor: 0.6637862
+    _translation: {x: 28, y: -119}
+    _zoomFactor: 1
   _haltSerialization: 0
-  actorParameters: []
+  actorParameters:
+  - _keyName: Pinyaata
+    _id: cc339686-988d-4b78-87bf-56322ed016c0
+    _actorObject: {fileID: 0}

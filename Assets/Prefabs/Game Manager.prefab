@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStateEventChannel: {fileID: 11400000, guid: 7368ba1356e34684d828411b1ba689b6,
     type: 2}
-  gameDurationTotal: 3
+  gameDurationTotal: 10
   gameDurationCurrent: 0
 --- !u!114 &584623398989698329
 MonoBehaviour:
@@ -85,6 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7086acdf36f2b41a50d8a8078d5ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStateEventChannel: {fileID: 11400000, guid: 7368ba1356e34684d828411b1ba689b6,
+    type: 2}
   DEBUG_UPDATE_PINGS: 1
   pingSweepMaterial: {fileID: 2100000, guid: a9eb52f39778e2a4bad35d77f7224d24, type: 2}
   maxNumPasses: 6
@@ -95,6 +97,7 @@ MonoBehaviour:
   - {r: 0.9811321, g: 0.5970096, b: 0.5970096, a: 0.19607843}
   - {r: 0.47267708, g: 0.760284, b: 0.8867924, a: 0.19607843}
   - {r: 0.8119434, g: 0.9811321, b: 0.68956923, a: 0.19607843}
+  blindfoldTransitionDuration: 1
 --- !u!114 &7511160320071650999
 MonoBehaviour:
   m_ObjectHideFlags: 0

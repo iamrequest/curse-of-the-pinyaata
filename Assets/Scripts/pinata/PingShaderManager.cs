@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Freya;
+using System;
 
 [System.Serializable]
 public class PingSweepData {
@@ -13,9 +15,13 @@ public class PingSweepData {
 
 // This class could be optimized by using coroutines, and maybe by keeping better track of which ping sweep slots are available
 public class PingShaderManager : MonoBehaviour {
+    public GameStateEventChannel gameStateEventChannel;
+
     // Optimization: If a color's alpha channel is 0, do not compute that ping sweep slot's color.
     private Color unusedColor = new Color(0, 0, 0, 0);
-    public bool DEBUG_UPDATE_PINGS;
+    public bool DEBUG_UPDATE_PINGS = true;
+
+    [Header("Material Settings")]
 
     // The number of ping sweeps that can be active at one time
     // This is configured at the shader level, since I have to add a sub-graph for each ping sweep
@@ -27,6 +33,9 @@ public class PingShaderManager : MonoBehaviour {
     // The distance from the origin for each active ping sweep
     public List<PingSweepData> pingSweeps;
     public List<Color> colors;
+
+    [Header("Transition")]
+    public float blindfoldTransitionDuration;
 
     public static PingShaderManager Instance { get; private set; }
     private void Awake() {
@@ -46,10 +55,32 @@ public class PingShaderManager : MonoBehaviour {
             pingSweepMaterial.SetColor($"color_{i}", unusedColor);
         }
     }
+    private void Start() {
+        RemoveBlindfoldImmediate();
+    }
+
+    private void OnEnable() {
+        gameStateEventChannel.onGameStateChanged += OnGameStateChanged;
+    }
+    private void OnDisable() {
+        gameStateEventChannel.onGameStateChanged -= OnGameStateChanged;
+    }
 
     private void Update() {
         if(DEBUG_UPDATE_PINGS) UpdatePings();
     }
+
+    private void OnGameStateChanged(GameState newGameState) {
+        switch (newGameState) {
+            case GameState.PREGAME:
+                ApplyBlindfold();
+                break;
+            case GameState.FINISHED:
+                RemoveBlindfold();
+                break;
+        }
+    }
+
 
     [Button] [HideInEditorMode]
     public void AddPing(Vector3 worldPosition) {
@@ -72,7 +103,7 @@ public class PingShaderManager : MonoBehaviour {
     }
 
     public Color GetRandomColor() {
-        return colors[Random.Range(0, colors.Count)];
+        return colors[UnityEngine.Random.Range(0, colors.Count)];
     }
 
     /// <summary>
@@ -109,5 +140,45 @@ public class PingShaderManager : MonoBehaviour {
                 }
             }
         }
+    }
+
+    // --------------------------------------------------------------------------------
+    private IEnumerator DoBlindfoldTransition(bool applyBlindfold) {
+        float elapsedDuration = 0f;
+        float a;
+        Color baseColor = pingSweepMaterial.GetColor("baseColor");
+
+        float from = applyBlindfold ? 0f : 1f;
+        float to = applyBlindfold ? 1f : 0f;
+
+        while (elapsedDuration < blindfoldTransitionDuration) {
+            elapsedDuration += Time.deltaTime;
+            a = Mathfs.RemapClamped(0f, blindfoldTransitionDuration, from, to, elapsedDuration);
+            baseColor.a = a;
+            pingSweepMaterial.SetColor("baseColor", baseColor);
+            yield return null;
+        }
+    }
+
+    [Button][ButtonGroup("Blindfold")]
+    public void ApplyBlindfold() {
+        StartCoroutine(DoBlindfoldTransition(true));
+    }
+    [Button][ButtonGroup("Blindfold")]
+    public void RemoveBlindfold() {
+        StartCoroutine(DoBlindfoldTransition(false));
+    }
+
+    [Button][ButtonGroup("Blindfold")]
+    public void ApplyBlindfoldImmediate() {
+        Color baseColor = pingSweepMaterial.GetColor("baseColor");
+        baseColor.a = 1f;
+        pingSweepMaterial.SetColor("baseColor", baseColor);
+    }
+    [Button][ButtonGroup("Blindfold")]
+    public void RemoveBlindfoldImmediate() {
+        Color baseColor = pingSweepMaterial.GetColor("baseColor");
+        baseColor.a = 0f;
+        pingSweepMaterial.SetColor("baseColor", baseColor);
     }
 }

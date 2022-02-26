@@ -13,6 +13,7 @@ public class DisableOnGameStart : MonoBehaviour {
 
     private void OnGameStateChanged(GameState newGameState) {
         switch (newGameState) {
+            case GameState.PREGAME:
             case GameState.ACTIVE:
                 gameObject.SetActive(false);
                 break;

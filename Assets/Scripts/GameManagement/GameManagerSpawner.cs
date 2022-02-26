@@ -7,15 +7,15 @@ public class GameManagerSpawner : MonoBehaviour {
     private void Awake() {
         if (Instance == null) {
             Instance = this;
+            DontDestroyOnLoad(gameObject); 
+            if (gameManagerInstance == null) {
+                gameManagerInstance = Instantiate(gameManagerPrefab, transform);
+            }
         } else {
             Debug.LogError($"Multiple {GetType()} components detected. This is probably a bug.");
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject); 
-        if (gameManagerInstance == null) {
-            gameManagerInstance = Instantiate(gameManagerPrefab, transform);
-        }
     }
 
     public GameObject gameManagerPrefab;

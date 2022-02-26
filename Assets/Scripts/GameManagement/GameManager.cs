@@ -1,10 +1,11 @@
 ﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState {
-    NOT_STARTED, ACTIVE, FINISHED
+    NOT_STARTED, PREGAME, ACTIVE, FINISHED
 }
 public class GameManager : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
@@ -26,12 +27,15 @@ public class GameManager : MonoBehaviour {
 
     private void OnEnable() {
         gameStateEventChannel.doStartGame += StartGame;
+        gameStateEventChannel.doStartPreGame += StartPreGame;
         gameStateEventChannel.doStopGame += EndGame;
     }
     private void OnDisable() {
         gameStateEventChannel.doStartGame -= StartGame;
+        gameStateEventChannel.doStartPreGame -= StartPreGame;
         gameStateEventChannel.doStopGame -= EndGame;
     }
+
     private void Start() {
         DontDestroyOnLoad(gameObject);
     }
@@ -51,6 +55,14 @@ public class GameManager : MonoBehaviour {
 
         gameTimerCoroutine = StartCoroutine(EndGameAfterDelay());
     }
+
+    [Button] [HideInEditorMode]
+    [ButtonGroup("Game Start Stop")]
+    private void StartPreGame() {
+        gameState = GameState.PREGAME;
+        gameStateEventChannel.OnGameStateChanged(gameState);
+    }
+
 
     [Button] [HideInEditorMode]
     [ButtonGroup("Game Start Stop")]

@@ -14,7 +14,7 @@ public class GameStateEventChannel : ScriptableObject {
     public UnityAction<GameState> onGameStateChanged;
 
     // These events are responsible for invoking an action
-    public UnityAction doStartGame, doStopGame;
+    public UnityAction doStartGame, doStartPreGame, doStopGame;
 
     /// <summary>
     /// This should only be called via GameManager
@@ -32,6 +32,14 @@ public class GameStateEventChannel : ScriptableObject {
     public void DoStartGame() {
         if (doStartGame != null) {
             doStartGame.Invoke();
+        }
+    }
+
+    [Button]
+    [ButtonGroup("GameManagement")]
+    public void DoStartPreGame() {
+        if (doStartPreGame != null) {
+            doStartPreGame.Invoke();
         }
     }
 
