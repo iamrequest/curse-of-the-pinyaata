@@ -1,9 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisableOnGameStart : MonoBehaviour {
+/// <summary>
+/// This class enables/disables the renderer, depending on the game state
+/// </summary>
+public class PinataRendererController : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
+    public Renderer m_renderer;
+    public bool initVisibility, gameVisibility, postGameVisibility;
 
     private void OnEnable() {
         gameStateEventChannel.onGameStateChanged += OnGameStateChanged;
@@ -11,20 +17,17 @@ public class DisableOnGameStart : MonoBehaviour {
     private void OnDisable() {
         gameStateEventChannel.onGameStateChanged -= OnGameStateChanged;
     }
-
     private void Start() {
-        StartCoroutine(RemoveBlindfoldAfterInit());
-    }
-    private IEnumerator RemoveBlindfoldAfterInit() {
-        yield return new WaitForEndOfFrame();
-        PingShaderManager.Instance.RemoveBlindfoldImmediate();
+        m_renderer.enabled = initVisibility;
     }
 
     private void OnGameStateChanged(GameState newGameState) {
         switch (newGameState) {
-            case GameState.PREGAME:
             case GameState.ACTIVE:
-                gameObject.SetActive(false);
+                m_renderer.enabled = gameVisibility;
+                break;
+            case GameState.FINISHED:
+                m_renderer.enabled = postGameVisibility;
                 break;
         }
     }

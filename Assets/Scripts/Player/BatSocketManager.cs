@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(HVRGrabbable))]
 public class BatSocketManager : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
 
-    private HVRGrabbable hvrGrabbable;
+    public HVRGrabbable hvrGrabbable;
     private MeshRenderer meshRenderer;
     private Coroutine returnToSocketCoroutine;
+    public HVRSocket chestSocket;
 
     [Range(0f, 5f)]
     public float returnToSocketDelay;
@@ -20,12 +20,12 @@ public class BatSocketManager : MonoBehaviour {
     public UnityEvent onReturnToSocket;
 
     private void Awake() {
-        hvrGrabbable = GetComponent<HVRGrabbable>();
-        meshRenderer = GetComponentInChildren<MeshRenderer>();
+        meshRenderer = hvrGrabbable.GetComponentInChildren<MeshRenderer>();
     }
 
     private void Start() {
         ReturnToSocket(true);
+        chestSocket.gameObject.SetActive(false);
     }
 
     private void OnEnable() {
@@ -37,16 +37,16 @@ public class BatSocketManager : MonoBehaviour {
 
     private IEnumerator AddListenersAfterInit() {
         yield return new WaitForEndOfFrame();
-        Player.Instance.chestSocket.Grabbed.AddListener(OnPlacedInSocket);
-        Player.Instance.chestSocket.Released.AddListener(OnRemovedFromSocket);
+        chestSocket.Grabbed.AddListener(OnPlacedInSocket);
+        chestSocket.Released.AddListener(OnRemovedFromSocket);
     }
 
     private void OnDisable() {
         hvrGrabbable.HandGrabbed.RemoveListener(OnGrabbed);
         hvrGrabbable.HandFullReleased.RemoveListener(OnFullRelease);
         gameStateEventChannel.onGameStateChanged -= OnGameStateChanged;
-        Player.Instance.chestSocket.Grabbed.RemoveListener(OnPlacedInSocket);
-        Player.Instance.chestSocket.Released.RemoveListener(OnRemovedFromSocket);
+        chestSocket.Grabbed.RemoveListener(OnPlacedInSocket);
+        chestSocket.Released.RemoveListener(OnRemovedFromSocket);
     }
 
 
@@ -76,10 +76,13 @@ public class BatSocketManager : MonoBehaviour {
 
     private void OnGameStateChanged(GameState newGameState) {
         switch (newGameState) {
-            //case GameState.ACTIVE:
-                // The socket (this gameobject's parent) will be disabled at this point, so this script won't be able to execute. This case is handled in the Player script
+            case GameState.ACTIVE:
+                chestSocket.gameObject.SetActive(true);
+                ReturnToSocket(true);
+                break;
             case GameState.FINISHED:
                 ReturnToSocket(false);
+                chestSocket.gameObject.SetActive(false);
                 break;
         }
     }
@@ -87,7 +90,8 @@ public class BatSocketManager : MonoBehaviour {
     // --------------------------------------------------------------------------------
     private void ReturnToSocket(bool ignoreSocketSFX) {
         hvrGrabbable.ForceRelease();
-        Player.Instance.chestSocket.TryGrab(hvrGrabbable, ignoreSocketSFX);
+        chestSocket.TryGrab(hvrGrabbable, ignoreSocketSFX);
+        meshRenderer.enabled = false;
         onReturnToSocket.Invoke();
     }
 }

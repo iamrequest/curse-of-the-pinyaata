@@ -9,7 +9,6 @@ public class Player : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
 
     public HVRPlayerController playerController { get; private set; }
-    public HVRSocket chestSocket;
     private Vector3 spawnPosition;
     private Quaternion spawnRotation;
 
@@ -38,13 +37,6 @@ public class Player : MonoBehaviour {
 
     private void Start() {
         ReturnToStartTransform();
-        StartCoroutine(DisableBatSocketAfterDelay());
-    }
-
-    private IEnumerator DisableBatSocketAfterDelay() {
-        // Waiting until the end of the frame to let the bat socket itself on start()
-        yield return new WaitForEndOfFrame();
-        chestSocket.gameObject.SetActive(false);
     }
 
     public void ReturnToStartTransform() {
@@ -54,11 +46,7 @@ public class Player : MonoBehaviour {
 
     private void OnGameStateChanged(GameState newGameState) {
         switch (newGameState) {
-            case GameState.ACTIVE:
-                chestSocket.gameObject.SetActive(true);
-                break;
             case GameState.FINISHED:
-                StartCoroutine(DisableBatSocketAfterDelay());
                 ReturnToStartTransform();
                 break;
         }

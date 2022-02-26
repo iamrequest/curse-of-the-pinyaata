@@ -118,7 +118,6 @@ GameObject:
   - component: {fileID: 2716851142505558459}
   - component: {fileID: 99068717}
   - component: {fileID: 8441425304135429286}
-  - component: {fileID: 8441425304135429287}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -309,24 +308,6 @@ MonoBehaviour:
   SocketedClip: {fileID: 0}
   UnsocketedClip: {fileID: 0}
   LinkedGrabbables: []
---- !u!114 &8441425304135429287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2716851142505558462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ce8c2e44d5ba544bad960b6f9615af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameStateEventChannel: {fileID: 11400000, guid: 7368ba1356e34684d828411b1ba689b6,
-    type: 2}
-  returnToSocketDelay: 3
-  onReturnToSocket:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &2716851142979973483
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,6 +23,8 @@ public class TutorialDialogInteractor : MonoBehaviour {
     }
 
     private IEnumerator StartDialogAfterDelay() {
+        yield return new WaitForEndOfFrame();
+        PingShaderManager.Instance.ApplyBlindfoldImmediate();
         yield return new WaitForSeconds(dialogStartDelay);
         dialogueTreeController.StartDialogue(dialogActor);
         ActiveDialogListener.Instance.OnDialogStart(dialogueTreeController);
