@@ -38,7 +38,8 @@ public class OnGameFinishedDialogPicker : MonoBehaviour {
 
     private IEnumerator StartDialogAfterDelay() {
         yield return new WaitForSeconds(PingShaderManager.Instance.blindfoldTransitionDuration);
-        dialogTreeController.StartDialogue(actor, OnDialogFinished);
+        //dialogTreeController.StartDialogue(actor, OnDialogFinished);
+        dialogTreeController.StartDialogue(OnDialogFinished);
         ActiveDialogListener.Instance.OnDialogStart(dialogTreeController);
     }
 

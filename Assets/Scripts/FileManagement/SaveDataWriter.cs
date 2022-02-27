@@ -17,13 +17,13 @@ public class SaveDataWriter : MonoBehaviour {
         damageable = GetComponent<Damageable>();
     }
     private void OnEnable() {
-        damageable.onHealthDepleted.AddListener(OnDestroy);
+        damageable.onHealthDepleted.AddListener(OnDestroyed);
     }
     private void OnDisable() {
-        damageable.onHealthDepleted.AddListener(OnDestroy);
+        damageable.onHealthDepleted.AddListener(OnDestroyed);
     }
 
-    private void OnDestroy(Damageable arg0, Vector3 arg1) {
+    private void OnDestroyed(Damageable arg0, Vector3 arg1) {
         SaveManager.Instance.UpdateSaveData(key, value);
     }
 }

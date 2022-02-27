@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStateEventChannel: {fileID: 11400000, guid: 7368ba1356e34684d828411b1ba689b6,
     type: 2}
-  gameDurationTotal: 120
+  gameDurationTotal: 3
   gameDurationCurrent: 0
 --- !u!114 &584623398989698329
 MonoBehaviour:
