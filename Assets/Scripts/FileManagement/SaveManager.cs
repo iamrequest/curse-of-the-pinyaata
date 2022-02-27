@@ -70,4 +70,58 @@ public class SaveManager : MonoBehaviour {
         saveData = new SaveData();
         saveManagerEventChannel.OnDelete(saveData); 
     }
+
+    public void UpdateSaveData(SaveDataKeys key, bool value) {
+        // This could probably be done a lot better
+        switch (key) {
+            case SaveDataKeys.isInitDialogComplete:
+                saveData.isInitDialogComplete = value;
+                SaveData();
+                break;
+            case SaveDataKeys.isTutorialComplete:
+                saveData.isTutorialComplete = value;
+                SaveData();
+                break;
+            default:
+                Debug.LogError($"Invalid save data key found for datatype bool: {key}");
+                break;
+        }
+    }
+
+    public void UpdateSaveData(SaveDataKeys key, int value) {
+        // This could probably be done a lot better
+        switch (key) {
+            case SaveDataKeys.numGamesPlayed:
+                saveData.numGamesPlayed = value;
+                SaveData();
+                break;
+            default:
+                Debug.LogError($"Invalid save data key found for datatype bool: {key}");
+                break;
+        }
+    }
+
+    public bool GetSaveDataValueBool(SaveDataKeys key) {
+        // This could probably be done a lot better
+        switch (key) {
+            case SaveDataKeys.isInitDialogComplete:
+                return saveData.isInitDialogComplete;
+            case SaveDataKeys.isTutorialComplete:
+                return saveData.isTutorialComplete;
+            default:
+                Debug.LogError($"Invalid save data key found for datatype bool: {key}");
+                return false;
+        }
+    }
+
+    public int GetSaveDataValueInt(SaveDataKeys key) {
+        // This could probably be done a lot better
+        switch (key) {
+            case SaveDataKeys.numGamesPlayed:
+                return saveData.numGamesPlayed;
+            default:
+                Debug.LogError($"Invalid save data key found for datatype int: {key}");
+                return -1;
+        }
+    }
 }

@@ -48,4 +48,8 @@ public class TutorialDialogInteractor : MonoBehaviour {
     public void ReturnToStartMenu() {
         sceneManagerEventChannel.LoadTitleScene();
     }
+
+    public void MarkTutorialComplete() {
+        SaveManager.Instance.UpdateSaveData(SaveDataKeys.isTutorialComplete, true);
+    }
 }

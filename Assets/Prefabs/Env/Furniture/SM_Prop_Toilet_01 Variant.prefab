@@ -29,6 +29,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &541140527
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5709973055027054176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.43610904, y: 0.47700092, z: 0.71582854}
+  m_Center: {x: -0.0075257514, y: 0.23850046, z: 0.35448974}
 --- !u!114 &659868229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,7 +59,7 @@ MonoBehaviour:
   isInvincible: 0
   isInvincibleBeforeGame: 1
   healthCurrent: 0
-  healthMax: 10
+  healthMax: 5
   onDamaged:
     m_PersistentCalls:
       m_Calls: []
@@ -81,19 +94,6 @@ MonoBehaviour:
   debugTextField: {fileID: 0}
   pointHolderSettings: {fileID: 11400000, guid: b61f1215c1e15084083b924ac542d1ab,
     type: 2}
---- !u!65 &541140527
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5709973055027054176}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.43610904, y: 0.47700092, z: 0.71582854}
-  m_Center: {x: -0.0075257514, y: 0.23850046, z: 0.35448974}
 --- !u!1001 &5708612998097606586
 PrefabInstance:
   m_ObjectHideFlags: 0

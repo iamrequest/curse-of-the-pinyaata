@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Pretty sure this is all deprecated
+/// </summary>
 public enum SaveDataKey {
     IS_TUTORIAL_COMPLETE, HIGHEST_SCORE
 }

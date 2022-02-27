@@ -61,7 +61,7 @@ MonoBehaviour:
   isInvincible: 0
   isInvincibleBeforeGame: 0
   healthCurrent: 0
-  healthMax: 10
+  healthMax: 7
   onDamaged:
     m_PersistentCalls:
       m_Calls: []
@@ -129,7 +129,7 @@ MonoBehaviour:
   isInvincible: 0
   isInvincibleBeforeGame: 0
   healthCurrent: 0
-  healthMax: 10
+  healthMax: 7
   onDamaged:
     m_PersistentCalls:
       m_Calls: []

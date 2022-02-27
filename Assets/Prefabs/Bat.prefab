@@ -284,7 +284,7 @@ MonoBehaviour:
   maxDamage: 5
   minDamagingSpeed: 3
   maxDamagingSpeed: 5
-  damageCooldown: 0.5
+  damageCooldown: 0.1
   layermaskPingSweep:
     serializedVersion: 2
     m_Bits: 6145

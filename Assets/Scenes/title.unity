@@ -2949,7 +2949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1371166957121120, guid: aa1d93d2d2812c647997998c269316dd, type: 3}
       propertyPath: m_Name
-      value: SM_Chr_Developer_Female_02
+      value: Sister
       objectReference: {fileID: 0}
     - target: {fileID: 1371166957121120, guid: aa1d93d2d2812c647997998c269316dd, type: 3}
       propertyPath: m_Layer
@@ -4402,12 +4402,12 @@ GameObject:
   - component: {fileID: 255790785}
   - component: {fileID: 255790784}
   m_Layer: 0
-  m_Name: Title Dialog
+  m_Name: Title Dialog Old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &255790783
 Transform:
   m_ObjectHideFlags: 0
@@ -9983,15 +9983,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_condition":{"valueA":{"_type":"System.Enum","_name":"cachedGameState","_targetVariableID":"00a92655-60b1-4d6c-808f-1723e45e6c19"},"valueB":{"_type":"GameState","_value":{"$content":1,"$type":"GameState"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},"_position":{"x":409.6997,"y":-22.86911},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"0"},{"statement":{"_text":"Pregame"},"_position":{"x":427.0,"y":305.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"_position":{"x":417.1462,"y":409.1753},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"2"},{"_condition":{"valueA":{"_type":"System.Enum","_name":"cachedGameState","_targetVariableID":"00a92655-60b1-4d6c-808f-1723e45e6c19"},"valueB":{"_type":"GameState","_value":{"$content":3,"$type":"GameState"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},"_position":{"x":649.8136,"y":90.21441},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"3"},{"statement":{"_text":"Game
-    over, kiddo."},"_position":{"x":708.8959,"y":312.9249},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"_position":{"x":706.7429,"y":459.5922},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"5"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_condition":{"valueA":{"_type":"System.Enum","_name":"cachedGameState","_targetVariableID":"00a92655-60b1-4d6c-808f-1723e45e6c19"},"valueB":{"_type":"GameState","_value":{"$content":1,"$type":"GameState"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},"_position":{"x":409.6997,"y":-22.86911},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"0"},{"conditions":[null,null,null],"_position":{"x":-724.8821,"y":253.9459},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"1"},{"_condition":{"method":{"_baseInfo":"OnGameFinishedDialogPicker|CheckSaveDataInt|System.Int32","_paramsInfo":"SaveDataKeys"},"parameters":[{"_type":"SaveDataKeys","_value":{"$content":3,"$type":"SaveDataKeys"}}],"checkValue":{"_type":"System.Int32","_value":{"$content":0,"$type":"System.Int32"}},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"},"_color":{"r":0.7019608,"g":1.0,"b":0.4980392,"a":1.0},"_position":{"x":-1111.425,"y":378.8712},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"2"},{"statement":{"_text":"It''s
+    time to play <color=red>Hit the Pinyaata</color>."},"_position":{"x":-1069.079,"y":512.1212},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"statement":{"_text":"Remember,
+    you have <color=\"red\">2 minutes</color>. There''s a timer on your left hand."},"_position":{"x":-1098.701,"y":636.4528},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"statement":{"_text":"Now,
+    show me what you can do~"},"_position":{"x":-1082.62,"y":730.5664},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"5"},{"_position":{"x":-1027.662,"y":817.7137},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"6"},{"_condition":{"method":{"_baseInfo":"OnGameFinishedDialogPicker|CheckSaveDataInt|System.Int32","_paramsInfo":"SaveDataKeys"},"parameters":[{"_type":"SaveDataKeys","_value":{"$content":3,"$type":"SaveDataKeys"}}],"checkValue":{"_type":"System.Int32","_value":{"$content":1,"$type":"System.Int32"}},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"},"_color":{"r":0.7019608,"g":1.0,"b":0.4980392,"a":1.0},"_position":{"x":-725.8821,"y":385.9459},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"7"},{"statement":{"_text":"You''ve
+    returned, just as I had hoped!"},"_position":{"x":-668.8821,"y":526.9459},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"statement":{"_text":"Let''s
+    not keep you waiting much longer, shall we?"},"_position":{"x":-670.8821,"y":608.9459},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"},{"_position":{"x":-642.1392,"y":729.5381},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"10"},{"childOptions":[{"weight":{"_value":1.0}},{"weight":{"_value":1.0}},{"weight":{"_value":1.0}}],"_position":{"x":-123.8821,"y":404.9459},"$type":"NodeCanvas.DialogueTrees.ProbabilitySelector","$id":"11"},{"statement":{"_text":"How
+    lovely it is to see you again, Kiddo."},"_position":{"x":-340.8821,"y":528.9459},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"12"},{"statement":{"_text":"Let''s
+    play, shall we?"},"_position":{"x":-319.8821,"y":616.9459},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"13"},{"_color":{"g":0.7254902,"b":0.9098039,"a":1.0},"_position":{"x":-136.8821,"y":796.9459},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"14"},{"statement":{"_text":"It''s
+    time to play."},"_position":{"x":-131.8821,"y":532.9459},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"15"},{"statement":{"_text":"How
+    much chaos will you create today?"},"_position":{"x":3.11792,"y":534.9459},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"16"},{"statement":{"_text":"The
+    thought of it makes me shudder."},"_position":{"x":5.11792,"y":604.9459},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"17"},{"statement":{"_text":"Now,
+    show me~"},"_position":{"x":37.11792,"y":684.9459},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"18"},{"_condition":{"valueA":{"_type":"System.Enum","_name":"cachedGameState","_targetVariableID":"00a92655-60b1-4d6c-808f-1723e45e6c19"},"valueB":{"_type":"GameState","_value":{"$content":3,"$type":"GameState"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},"_position":{"x":649.8136,"y":90.21441},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"19"},{"conditions":[null],"_color":{"r":0.7019608,"g":1.0,"b":0.4980392,"a":1.0},"_position":{"x":689.9999,"y":219.0},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"20"},{"_condition":{"method":{"_baseInfo":"OnGameFinishedDialogPicker|CheckSaveDataInt|System.Int32","_paramsInfo":"SaveDataKeys"},"parameters":[{"_type":"SaveDataKeys","_value":{"$content":3,"$type":"SaveDataKeys"}}],"checkValue":{"_type":"System.Int32","_value":{"$content":0,"$type":"System.Int32"}},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"},"_color":{"r":0.7019608,"g":1.0,"b":0.4980392,"a":1.0},"_position":{"x":567.9999,"y":339.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"21"},{"statement":{"_text":"Game
+    over, kiddo."},"_position":{"x":658.8959,"y":474.9249},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"22"},{"statement":{"_text":"You
+    did well for your first time."},"_position":{"x":635.0,"y":560.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"23"},{"_condition":{"method":{"_baseInfo":"OnGameFinishedDialogPicker|CheckSaveDataBool|System.Boolean","_paramsInfo":"SaveDataKeys"},"parameters":[{"_type":"SaveDataKeys","_value":{"$content":2,"$type":"SaveDataKeys"}}],"checkValue":{"_type":"System.Boolean","_value":{"$content":false,"$type":"System.Boolean"}},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"},"_color":{"r":0.7019608,"g":1.0,"b":0.4980392,"a":1.0},"_position":{"x":563.8094,"y":640.6936},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"24"},{"statement":{"_text":"You
+    should know, you aren''t limited to this room."},"_position":{"x":505.0,"y":768.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"25"},{"statement":{"_text":"For
+    instance, that <color=red>door</color> behind you - I wonder if you are strong
+    enough to break it?"},"_position":{"x":489.0,"y":844.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"26"},{"statement":{"_text":"Let''s
+    see just how far we can take this, shall we?"},"_position":{"x":619.0,"y":958.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"27"},{"statement":{"_text":"However,
+    that''s all the time we have for today."},"_position":{"x":624.0,"y":1051.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"28"},{"statement":{"_text":"You''ll
+    come back, won''t you?~"},"_position":{"x":651.0,"y":1127.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"29"},{"_color":{"g":0.7254902,"b":0.9098039,"a":1.0},"_position":{"x":699.0,"y":1232.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"30"},{"statement":{"_text":"And
+    you figured out how to break down doors on your own - I knew you were a clever
+    one."},"_position":{"x":751.0,"y":762.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"31"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"16"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"20"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"22"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"25"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"25"},"_targetNode":{"$ref":"26"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"26"},"_targetNode":{"$ref":"27"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"27"},"_targetNode":{"$ref":"28"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"28"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"29"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"31"},"_targetNode":{"$ref":"27"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences: []
   _boundGraphSource:
     _version: 3.22
     _category: 
     _comments: 
-    _translation: {x: 93, y: -15}
-    _zoomFactor: 0.8917371
+    _translation: {x: 1229, y: 174}
+    _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2
@@ -10032,7 +10052,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &564298420
 PrefabInstance:
@@ -10252,6 +10272,130 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 572579690}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &578755549
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 182675153}
+    m_Modifications:
+    - target: {fileID: 251850991091468130, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_Name
+      value: Dialog Renderer
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.365778
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.991445
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000006230715
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.13052541
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000055697228
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.744
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 15.000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468135, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: dialogActor
+      value: 
+      objectReference: {fileID: 820812557}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a945d6c5075c9a64497549ee2fba7382, type: 3}
 --- !u!1001 &579545797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14032,7 +14176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1099670560160142, guid: 72eac7e5c7348c94d8915f3dcaa2f5eb, type: 3}
       propertyPath: m_Name
-      value: SM_Chr_Business_Male_03
+      value: Brother
       objectReference: {fileID: 0}
     - target: {fileID: 1099670560160142, guid: 72eac7e5c7348c94d8915f3dcaa2f5eb, type: 3}
       propertyPath: m_Layer
@@ -15901,9 +16045,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268f0421f5ea07249a2c772881b553dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: SM_Chr_Developer_Female_02
+  _name: Sister
   _portrait: {fileID: 0}
-  _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+  _dialogueColor: {r: 0.8396226, g: 0.45545566, b: 0.7280096, a: 1}
   _dialogueOffset: {x: 0, y: 0, z: 0}
   animator: {fileID: 820812556}
   animatorSpeedRange: {x: 0.95, y: 1.05}
@@ -20485,6 +20629,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1046721104}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1051599730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3223815368202394337, guid: 11f1e327126bf65448af6d88109270de,
+    type: 3}
+  m_PrefabInstance: {fileID: 3223231905460967941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1051599731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051599730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4c54ae155b7a4489055976e8672126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 2
+  value: 1
 --- !u!1001 &1053966991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20637,6 +20801,130 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1055030004}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1055163373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 761756297}
+    m_Modifications:
+    - target: {fileID: 251850991091468130, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_Name
+      value: Dialog Renderer
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.365778
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99144495
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000007177477
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.13052608
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000098438704
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.677
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -15.000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251850991091468135, guid: a945d6c5075c9a64497549ee2fba7382,
+        type: 3}
+      propertyPath: dialogActor
+      value: 
+      objectReference: {fileID: 1629955211}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a945d6c5075c9a64497549ee2fba7382, type: 3}
 --- !u!1001 &1075754818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21233,7 +21521,7 @@ PrefabInstance:
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.000055
+      value: 2.072
       objectReference: {fileID: 0}
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
@@ -26493,12 +26781,12 @@ PrefabInstance:
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.000055
+      value: 1.722
       objectReference: {fileID: 0}
     - target: {fileID: 251850991091468134, guid: a945d6c5075c9a64497549ee2fba7382,
         type: 3}
@@ -28574,9 +28862,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268f0421f5ea07249a2c772881b553dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: SM_Chr_Business_Male_03
+  _name: Brother
   _portrait: {fileID: 0}
-  _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+  _dialogueColor: {r: 0.6004361, g: 0.9716981, b: 0.90356016, a: 1}
   _dialogueOffset: {x: 0, y: 0, z: 0}
   animator: {fileID: 1629955210}
   animatorSpeedRange: {x: 0.95, y: 1.05}
@@ -29779,6 +30067,131 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1702928966}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1703276502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1703276506}
+  - component: {fileID: 1703276505}
+  - component: {fileID: 1703276504}
+  - component: {fileID: 1703276503}
+  m_Layer: 0
+  m_Name: Title Dialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1703276503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703276502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentBlackboard: {fileID: 0}
+  _serializedBlackboard: '{"_variables":{}}'
+  _objectReferences: []
+  _serializedVariables: []
+--- !u!114 &1703276504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703276502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedExposedParameters: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"Surprise!\n(Press
+    the primary button to advance dialog)"},"_actorName":"Mom","_actorParameterID":"017d4cae-22d2-4909-9b0e-5c0eddfb9140","_position":{"x":317.0,"y":267.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"Happy
+    birthday, Kiddo!"},"_actorName":"Dad","_actorParameterID":"f1d2bda6-615e-48bf-a83b-471c14ef52eb","_position":{"x":294.0,"y":362.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"Were
+    you surprised?"},"_actorName":"Mom","_actorParameterID":"017d4cae-22d2-4909-9b0e-5c0eddfb9140","_position":{"x":308.0,"y":446.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"Well,
+    the whole family''s here, so let''s enjoy ourselves!"},"_actorName":"Mom","_actorParameterID":"017d4cae-22d2-4909-9b0e-5c0eddfb9140","_position":{"x":290.0,"y":527.6998},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"statement":{"_text":"Hey
+    hey, we got a pinata for you!"},"_actorName":"Sister","_actorParameterID":"713b94e9-e270-4f76-baab-99a7d27d8a15","_position":{"x":300.0,"y":615.6997},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"statement":{"_text":"Since
+    ya know, you ask for one every year."},"_actorName":"Sister","_actorParameterID":"713b94e9-e270-4f76-baab-99a7d27d8a15","_position":{"x":284.0,"y":708.3002},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"5"},{"statement":{"_text":"You
+    don''t think they''re getting a bit old for these things, do ya?"},"_actorName":"Brother","_actorParameterID":"cad150db-e309-4ee4-865f-c913dc97b631","_position":{"x":284.0,"y":788.3994},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"statement":{"_text":"Come
+    on dumbass, it''s their birthday, they can get a pinata if they want!"},"_actorName":"Sister","_actorParameterID":"713b94e9-e270-4f76-baab-99a7d27d8a15","_position":{"x":284.0779,"y":877.5359},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"7"},{"statement":{"_text":"Ah,
+    uh, yeah, you''re right. My bad hehe"},"_actorName":"Brother","_actorParameterID":"cad150db-e309-4ee4-865f-c913dc97b631","_position":{"x":289.8285,"y":969.545},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"statement":{"_text":"Well,
+    let us know when you''re ready and we''ll set it up, ok?"},"_actorName":"Dad","_actorParameterID":"f1d2bda6-615e-48bf-a83b-471c14ef52eb","_position":{"x":282.9278,"y":1054.653},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"},{"statement":{"_text":"We''ll
+    get this sucker strung up in a jiffy!"},"_actorName":"Dad","_actorParameterID":"f1d2bda6-615e-48bf-a83b-471c14ef52eb","_position":{"x":293.2787,"y":1147.812},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"10"},{"_position":{"x":332.3826,"y":1283.72},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"11"},{"_condition":{"method":{"_baseInfo":"TitleScreenDialogPicker|CheckSaveDataBool|System.Boolean","_paramsInfo":"SaveDataKeys"},"parameters":[{"_type":"SaveDataKeys","_value":{"$content":0,"$type":"SaveDataKeys"}}],"checkValue":{"_type":"System.Boolean","_value":{"$content":false,"$type":"System.Boolean"}},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"},"_position":{"x":453.0001,"y":79.00002},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"12"},{"conditions":[null,null,null],"_position":{"x":987.798,"y":192.5172},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"13"},{"_condition":{"method":{"_baseInfo":"TitleScreenDialogPicker|CheckSaveDataInt|System.Int32","_paramsInfo":"SaveDataKeys"},"parameters":[{"_type":"SaveDataKeys","_value":{"$content":3,"$type":"SaveDataKeys"}}],"checkValue":{"_type":"System.Int32","_value":{"$content":0,"$type":"System.Int32"}},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"},"_position":{"x":537.6036,"y":330.6702},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"14"},{"statement":{"_text":"Ready
+    to play? We''re all set for you."},"_actorName":"Dad","_actorParameterID":"f1d2bda6-615e-48bf-a83b-471c14ef52eb","_position":{"x":592.5742,"y":470.6362},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"15"},{"_position":{"x":630.8046,"y":551.6252},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"16"},{"_condition":{"method":{"_baseInfo":"TitleScreenDialogPicker|CheckSaveDataInt|System.Int32","_paramsInfo":"SaveDataKeys"},"parameters":[{"_type":"SaveDataKeys","_value":{"$content":3,"$type":"SaveDataKeys"}}],"checkValue":{"_type":"System.Int32","_value":{"$content":1,"$type":"System.Int32"}},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"},"_position":{"x":866.0,"y":332.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"17"},{"statement":{"_text":"You
+    ok? You kinda zoned out a bit there.pi\u00f1ata"},"_actorName":"Brother","_actorParameterID":"cad150db-e309-4ee4-865f-c913dc97b631","_position":{"x":922.0,"y":472.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"18"},{"statement":{"_text":"I
+    think you were talking to the pinata?"},"_actorName":"Brother","_actorParameterID":"cad150db-e309-4ee4-865f-c913dc97b631","_position":{"x":930.0,"y":550.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"19"},{"statement":{"_text":"Can
+    you blame them? They''ve been working the graveyard shift for weeks now."},"_actorName":"Sister","_actorParameterID":"713b94e9-e270-4f76-baab-99a7d27d8a15","_position":{"x":906.0,"y":626.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"20"},{"statement":{"_text":"Gotta
+    make rent somehow, right?"},"_actorName":"Sister","_actorParameterID":"713b94e9-e270-4f76-baab-99a7d27d8a15","_position":{"x":910.0,"y":700.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"21"},{"statement":{"_text":"I
+    suppose so..."},"_actorName":"Brother","_actorParameterID":"cad150db-e309-4ee4-865f-c913dc97b631","_position":{"x":956.0,"y":780.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"22"},{"statement":{"_text":"Well
+    anyways, don''t just stare at the damn thing, let''s play!"},"_actorName":"Brother","_actorParameterID":"cad150db-e309-4ee4-865f-c913dc97b631","_position":{"x":914.0,"y":860.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"23"},{"_color":{"g":0.7254902,"b":0.9098039,"a":1.0},"_position":{"x":952.0,"y":966.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"24"},{"_condition":{"method":{"_baseInfo":"TitleScreenDialogPicker|CheckSaveDataInt|System.Int32","_paramsInfo":"SaveDataKeys"},"parameters":[{"_type":"SaveDataKeys","_value":{"$content":3,"$type":"SaveDataKeys"}}],"checkValue":{"_type":"System.Int32","_value":{"$content":2,"$type":"System.Int32"}},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction_Multiplatform"},"_color":{"r":0.7019608,"g":1.0,"b":0.4980392,"a":1.0},"_position":{"x":1184.0,"y":336.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"25"},{"statement":{"_text":"What?"},"_actorName":"Brother","_actorParameterID":"cad150db-e309-4ee4-865f-c913dc97b631","_position":{"x":1270.0,"y":466.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"26"},{"statement":{"_text":"You
+    think the pinata''s talking to you? You sure you''re alright?"},"_actorName":"Brother","_actorParameterID":"cad150db-e309-4ee4-865f-c913dc97b631","_position":{"x":1274.0,"y":542.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"27"},{"statement":{"_text":"Honey,
+    you''re starting to worry me, are you sure you''re sleeping enough?"},"_actorName":"Mom","_actorParameterID":"017d4cae-22d2-4909-9b0e-5c0eddfb9140","_position":{"x":1262.0,"y":616.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"28"},{"statement":{"_text":"Now
+    now, this sort of thing is normal for kids their age!"},"_actorName":"Dad","_actorParameterID":"f1d2bda6-615e-48bf-a83b-471c14ef52eb","_position":{"x":1276.0,"y":690.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"29"},{"statement":{"_text":"Back
+    when I was their age, I was mowing lawns all day, all summer!"},"_actorName":"Dad","_actorParameterID":"f1d2bda6-615e-48bf-a83b-471c14ef52eb","_position":{"x":1274.0,"y":772.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"30"},{"statement":{"_text":"Yeah
+    yeah, we''ve heard this one before! "},"_actorName":"Sister","_actorParameterID":"713b94e9-e270-4f76-baab-99a7d27d8a15","_position":{"x":1272.0,"y":860.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"31"},{"statement":{"_text":"This
+    isn''t the same thing - they''re not making the same money that you made back
+    then!"},"_actorName":"Sister","_actorParameterID":"713b94e9-e270-4f76-baab-99a7d27d8a15","_position":{"x":1280.0,"y":940.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"32"},{"statement":{"_text":"*ahem*"},"_actorName":"Mom","_actorParameterID":"017d4cae-22d2-4909-9b0e-5c0eddfb9140","_position":{"x":1318.0,"y":1018.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"33"},{"statement":{"_text":"Anyways,
+    why don''t you take it easy for a bit? We can play the pinata game once you''re
+    feeling better, ok?"},"_actorName":"Mom","_actorParameterID":"017d4cae-22d2-4909-9b0e-5c0eddfb9140","_position":{"x":1266.0,"y":1094.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"34"},{"_color":{"g":0.7254902,"b":0.9098039,"a":1.0},"_position":{"x":1308.0,"y":1180.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"35"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"25"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"20"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"22"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"25"},"_targetNode":{"$ref":"26"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"26"},"_targetNode":{"$ref":"27"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"27"},"_targetNode":{"$ref":"28"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"28"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"29"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"31"},"_targetNode":{"$ref":"32"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"32"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"33"},"_targetNode":{"$ref":"34"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"34"},"_targetNode":{"$ref":"35"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Mom","_id":"017d4cae-22d2-4909-9b0e-5c0eddfb9140","_actorObject":1},{"_keyName":"Dad","_id":"f1d2bda6-615e-48bf-a83b-471c14ef52eb","_actorObject":2},{"_keyName":"Sister","_id":"713b94e9-e270-4f76-baab-99a7d27d8a15","_actorObject":3},{"_keyName":"Brother","_id":"cad150db-e309-4ee4-865f-c913dc97b631","_actorObject":4}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 481386479}
+  - {fileID: 992671608}
+  - {fileID: 820812557}
+  - {fileID: 1629955211}
+  _boundGraphSource:
+    _version: 3.22
+    _category: 
+    _comments: 
+    _translation: {x: 72, y: 23}
+    _zoomFactor: 0.6904553
+  _firstActivation: 0
+  _enableAction: 1
+  _disableAction: 2
+  _lockBoundGraphPrefabOverrides: 1
+  _preInitializeSubGraphs: 0
+  _updateMode: 0
+  _graph: {fileID: 0}
+  _blackboard: {fileID: 1703276503}
+--- !u!114 &1703276505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703276502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5d469d3eb1e8047967fb8dd99190de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogTreeController: {fileID: 1703276504}
+  tutorialButton: {fileID: 615326562}
+  startButton: {fileID: 1891943574}
+--- !u!4 &1703276506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703276502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6311933, y: -3.076171, z: 21.457205}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1704474485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32449,7 +32862,7 @@ PrefabInstance:
     - target: {fileID: 7522030612428408022, guid: 48f2d923d4365d540ad9a7d6a176d9d7,
         type: 3}
       propertyPath: m_Name
-      value: Pinyaata Actor
+      value: Pinyaata
       objectReference: {fileID: 0}
     - target: {fileID: 7522030612428408022, guid: 48f2d923d4365d540ad9a7d6a176d9d7,
         type: 3}
@@ -35745,7 +36158,7 @@ PrefabInstance:
     - target: {fileID: 204982693292439633, guid: a9543e56389fc5a45bc75d95abaf3a7c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 204982693292439633, guid: a9543e56389fc5a45bc75d95abaf3a7c,
         type: 3}
@@ -38314,7 +38727,7 @@ PrefabInstance:
     - target: {fileID: 204982693292439633, guid: a9543e56389fc5a45bc75d95abaf3a7c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 204982693292439633, guid: a9543e56389fc5a45bc75d95abaf3a7c,
         type: 3}
@@ -39186,6 +39599,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1615341317}
     m_Modifications:
+    - target: {fileID: 1007170125, guid: 11f1e327126bf65448af6d88109270de, type: 3}
+      propertyPath: onHealthDepleted.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007170125, guid: 11f1e327126bf65448af6d88109270de, type: 3}
+      propertyPath: onHealthDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007170125, guid: 11f1e327126bf65448af6d88109270de, type: 3}
+      propertyPath: onHealthDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1051599731}
+    - target: {fileID: 1007170125, guid: 11f1e327126bf65448af6d88109270de, type: 3}
+      propertyPath: onHealthDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007170125, guid: 11f1e327126bf65448af6d88109270de, type: 3}
+      propertyPath: onHealthDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSaveData
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007170125, guid: 11f1e327126bf65448af6d88109270de, type: 3}
+      propertyPath: onHealthDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3221751527747228381, guid: 11f1e327126bf65448af6d88109270de,
         type: 3}
       propertyPath: m_RootOrder

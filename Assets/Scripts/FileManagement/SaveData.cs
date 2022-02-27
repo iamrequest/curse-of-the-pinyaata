@@ -6,6 +6,9 @@ using UnityEngine;
 public class SaveData {
     public List<float> highScores;
     public bool isTutorialComplete;
+    public bool isInitDialogComplete;
+    public bool firstDoorBroken;
+    public int numGamesPlayed;
 
     public SaveData() {
         highScores = new List<float>();

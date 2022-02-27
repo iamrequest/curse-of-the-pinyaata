@@ -6,6 +6,10 @@ using NodeCanvas.DialogueTrees;
 using Sirenix.OdinInspector;
 using UnityEngine.Events;
 
+/// <summary>
+/// This class starts pre-game and post-game dialog with the Pinyaata, and takes care of post-dialog tasks.
+/// "Dialog Picker" is a name that needs refactoring - this is more of a Manager class.
+/// </summary>
 public class OnGameFinishedDialogPicker : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
     public SceneManagerEventChannel sceneManagerEventChannel;
@@ -47,5 +51,22 @@ public class OnGameFinishedDialogPicker : MonoBehaviour {
                 sceneManagerEventChannel.LoadTitleScene();
                 break;
         }
+    }
+
+    public void UpdateSaveData(SaveDataKeys key, bool value) {
+        SaveManager.Instance.UpdateSaveData(key, value);
+    }
+    public void UpdateSaveData(SaveDataKeys key, int value) {
+        SaveManager.Instance.UpdateSaveData(key, value);
+    }
+
+    public bool CheckSaveDataBool(SaveDataKeys key) {
+        return SaveManager.Instance.GetSaveDataValueBool(key);
+    }
+    public int CheckSaveDataInt(SaveDataKeys key) {
+        return SaveManager.Instance.GetSaveDataValueInt(key);
+    }
+    public void IncrementGamesPlayedCounter() {
+        SaveManager.Instance.UpdateSaveData(SaveDataKeys.numGamesPlayed, SaveManager.Instance.saveData.numGamesPlayed + 1);
     }
 }
