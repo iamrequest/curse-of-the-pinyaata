@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2049
   m_renderer: {fileID: 2331910372382150013}
   rb: {fileID: 2331910372382150015}
   spawnerRb: {fileID: 0}
