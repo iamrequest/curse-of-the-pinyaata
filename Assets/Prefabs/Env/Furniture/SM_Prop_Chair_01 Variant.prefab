@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Chair_01 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1743707620356134, guid: 51bf789fc9fa2e44499d7c3d307e53f5, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4836865076513378, guid: 51bf789fc9fa2e44499d7c3d307e53f5, type: 3}
       propertyPath: m_RootOrder
       value: 0

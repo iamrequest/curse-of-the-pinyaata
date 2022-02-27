@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Bathroom_Sink_02 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1234924350843714, guid: a3e9d2b6e4af2f54f9f5bad0e0bc986c, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4031889603535732, guid: a3e9d2b6e4af2f54f9f5bad0e0bc986c, type: 3}
       propertyPath: m_RootOrder
       value: 0

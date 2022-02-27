@@ -145,7 +145,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1266214597600528, guid: 7695f2be8e68d1346a203d9a90eecf81, type: 3}
       propertyPath: m_Name
-      value: SM_Prop_ToiletStalls_01 (3)
+      value: SM_Prop_ToiletStalls_01 (2) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266214597600528, guid: 7695f2be8e68d1346a203d9a90eecf81, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881548855205766, guid: 7695f2be8e68d1346a203d9a90eecf81, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989397661669202, guid: 7695f2be8e68d1346a203d9a90eecf81, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4393500084235450, guid: 7695f2be8e68d1346a203d9a90eecf81, type: 3}
       propertyPath: m_RootOrder
