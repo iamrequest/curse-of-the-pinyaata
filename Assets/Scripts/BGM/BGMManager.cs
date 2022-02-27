@@ -22,7 +22,7 @@ public class BGMManager : MonoBehaviour {
 
     [Range(0f, 3f)]
     public float fadeDuration;
-    public Coroutine fadeCoroutine;
+    private Coroutine fadeCoroutine;
 
     private void Awake() {
         audioSource = GetComponent<AudioSource>();
