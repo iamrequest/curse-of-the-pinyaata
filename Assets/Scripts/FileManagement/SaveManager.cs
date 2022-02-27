@@ -104,10 +104,12 @@ public class SaveManager : MonoBehaviour {
     public bool GetSaveDataValueBool(SaveDataKeys key) {
         // This could probably be done a lot better
         switch (key) {
-            case SaveDataKeys.isInitDialogComplete:
-                return saveData.isInitDialogComplete;
             case SaveDataKeys.isTutorialComplete:
                 return saveData.isTutorialComplete;
+            case SaveDataKeys.isFirstDoorDestroyed:
+                return saveData.firstDoorBroken;
+            case SaveDataKeys.isLastDoorDestroyed:
+                return saveData.finalDoorBroken;
             default:
                 Debug.LogError($"Invalid save data key found for datatype bool: {key}");
                 return false;

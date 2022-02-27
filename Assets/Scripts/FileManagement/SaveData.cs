@@ -8,6 +8,7 @@ public class SaveData {
     public bool isTutorialComplete;
     public bool isInitDialogComplete;
     public bool firstDoorBroken;
+    public bool finalDoorBroken;
     public int numGamesPlayed;
 
     public SaveData() {

@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum SaveDataKeys {
-    isTutorialComplete, isInitDialogComplete, isFirstDoorDestroyed, numGamesPlayed
+    isTutorialComplete, isInitDialogComplete, isFirstDoorDestroyed, numGamesPlayed, isLastDoorDestroyed
 }
