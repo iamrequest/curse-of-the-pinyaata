@@ -48,6 +48,7 @@ public class OnGameFinishedDialogPicker : MonoBehaviour {
                 gameStateEventChannel.DoStartGame();
                 break;
             case GameState.FINISHED:
+                IncrementGamesPlayedCounter();
                 sceneManagerEventChannel.LoadTitleScene();
                 break;
         }
