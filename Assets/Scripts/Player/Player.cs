@@ -1,5 +1,6 @@
 ﻿using HurricaneVR.Framework.Core.Grabbers;
 using HurricaneVR.Framework.Core.Player;
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,8 +10,7 @@ public class Player : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
 
     public HVRPlayerController playerController { get; private set; }
-    private Vector3 spawnPosition;
-    private Quaternion spawnRotation;
+    private Vector3 spawnPosition, spawnDirection;
 
     public static Player Instance { get; private set; }
     private void Awake() {
@@ -24,8 +24,9 @@ public class Player : MonoBehaviour {
         playerController = GetComponentInChildren<HVRPlayerController>();
         // animator = GetComponentInChildren<Animator>();
         // animHashVisionFade = Animator.StringToHash("visionFade");
+
         spawnPosition = playerController.transform.position;
-        spawnRotation = playerController.transform.rotation;
+        spawnDirection = playerController.transform.forward;
     }
 
     private void OnEnable() {
@@ -39,9 +40,9 @@ public class Player : MonoBehaviour {
         ReturnToStartTransform();
     }
 
+    [Button]
     public void ReturnToStartTransform() {
-        playerController.transform.position = spawnPosition;
-        playerController.transform.rotation = spawnRotation;
+        playerController.Teleporter.Teleport(spawnPosition, spawnDirection);
     }
 
     private void OnGameStateChanged(GameState newGameState) {
