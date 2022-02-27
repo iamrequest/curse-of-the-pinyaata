@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState {
-    NOT_STARTED, PREGAME, ACTIVE, FINISHED
+    NOT_STARTED, PREGAME, ACTIVE, FINISHED, STOPPED
 }
 public class GameManager : MonoBehaviour {
     public GameStateEventChannel gameStateEventChannel;
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour {
     [Button] [HideInEditorMode]
     [ButtonGroup("Game Start Stop")]
     public void EndGame() {
-        if (gameState != GameState.ACTIVE) {
+        if (gameState != GameState.ACTIVE && gameState != GameState.STOPPED) {
             return;
         }
 
@@ -81,6 +81,20 @@ public class GameManager : MonoBehaviour {
             gameTimerCoroutine = null;
         }
     }
+
+
+    // This is a special case used for the final dialog with the pinyaata
+    [Button] [HideInEditorMode]
+    [ButtonGroup("Game Start Stop")]
+    public void StopGame() {
+        // Stop the game timer
+        if (gameTimerCoroutine != null) {
+            StopCoroutine(gameTimerCoroutine);
+            gameTimerCoroutine = null;
+        }
+        gameState = GameState.STOPPED;
+    }
+
     private IEnumerator EndGameAfterDelay() {
         gameDurationCurrent = gameDurationTotal;
 

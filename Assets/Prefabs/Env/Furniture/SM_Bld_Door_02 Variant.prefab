@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugTextField: {fileID: 0}
-  sfxSettings: {fileID: 0}
+  sfxSettings: {fileID: 11400000, guid: ea3e9f4b1d7fa4742974b1a0903343a9, type: 2}
   isInvincible: 1
   isInvincibleBeforeGame: 0
   healthCurrent: 0
@@ -40,6 +40,19 @@ MonoBehaviour:
   onHealthDepleted:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1594538981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6402802571093570165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be9bef70b4644b4c93e4410162e55f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  confettiSettings: {fileID: 11400000, guid: be9706ef8c4607840a64315c13d49ae4, type: 2}
 --- !u!114 &1594538982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,19 +68,6 @@ MonoBehaviour:
   debugTextField: {fileID: 0}
   pointHolderSettings: {fileID: 11400000, guid: 998d2d26e72aa9b439247446af07fc4a,
     type: 2}
---- !u!114 &1594538981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6402802571093570165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be9bef70b4644b4c93e4410162e55f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  confettiSettings: {fileID: 11400000, guid: be9706ef8c4607840a64315c13d49ae4, type: 2}
 --- !u!114 &6566735191641479728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +81,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockMesh: {fileID: 6060844591818039719}
+  doorBlockingCube: {fileID: 0}
+  dialogtreeController: {fileID: 0}
 --- !u!1001 &6403304870490954998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,7 +182,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1768947436039628, guid: 1d46b704e2c5bc94b94f4b8528cc395b, type: 3}
       propertyPath: m_Name
-      value: SM_Bld_Door_02
+      value: SM_Bld_Door_02 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4108251285165204, guid: 1d46b704e2c5bc94b94f4b8528cc395b, type: 3}
       propertyPath: m_RootOrder

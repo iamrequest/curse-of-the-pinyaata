@@ -82,6 +82,14 @@ public class SaveManager : MonoBehaviour {
                 saveData.isTutorialComplete = value;
                 SaveData();
                 break;
+            case SaveDataKeys.isFirstDoorDestroyed:
+                saveData.firstDoorBroken = value;
+                SaveData();
+                break;
+            case SaveDataKeys.isLastDoorDestroyed:
+                saveData.finalDoorBroken = value;
+                SaveData();
+                break;
             default:
                 Debug.LogError($"Invalid save data key found for datatype bool: {key}");
                 break;
