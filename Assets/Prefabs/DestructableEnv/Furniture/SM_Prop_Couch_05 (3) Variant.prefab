@@ -42,6 +42,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugTextField: {fileID: 0}
+  sfxSettings: {fileID: 11400000, guid: ea3e9f4b1d7fa4742974b1a0903343a9, type: 2}
   isInvincible: 0
   isInvincibleBeforeGame: 1
   healthCurrent: 0
@@ -77,6 +78,10 @@ PrefabInstance:
     - target: {fileID: 1310856652029204, guid: 9de8288edfa5d0a4ca309f6a3d808680, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Couch_05 (3) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310856652029204, guid: 9de8288edfa5d0a4ca309f6a3d808680, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4886170059828810, guid: 9de8288edfa5d0a4ca309f6a3d808680, type: 3}
       propertyPath: m_RootOrder

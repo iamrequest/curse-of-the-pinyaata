@@ -18,8 +18,8 @@ TagManager:
   - Player
   - DynamicPose
   - Confetti
-  - 
-  - 
+  - Damageable
+  - Actor
   - 
   - 
   - 

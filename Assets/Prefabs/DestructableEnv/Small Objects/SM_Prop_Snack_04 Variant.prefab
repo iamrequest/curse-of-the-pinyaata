@@ -42,6 +42,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugTextField: {fileID: 0}
+  sfxSettings: {fileID: 11400000, guid: ea3e9f4b1d7fa4742974b1a0903343a9, type: 2}
   isInvincible: 0
   isInvincibleBeforeGame: 1
   healthCurrent: 0
@@ -77,6 +78,10 @@ PrefabInstance:
     - target: {fileID: 1876292433166628, guid: 3fc028d167f405e4b8ac094c01d0c263, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Snack_04 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876292433166628, guid: 3fc028d167f405e4b8ac094c01d0c263, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4934151871184440, guid: 3fc028d167f405e4b8ac094c01d0c263, type: 3}
       propertyPath: m_RootOrder

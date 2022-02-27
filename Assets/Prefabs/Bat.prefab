@@ -287,8 +287,13 @@ MonoBehaviour:
   damageCooldown: 0.5
   layermaskPingSweep:
     serializedVersion: 2
+    m_Bits: 6145
+  layermaskPingSFX:
+    serializedVersion: 2
     m_Bits: 1
   pingSweepCooldown: 0.3
+  pingSFX: {fileID: 8300000, guid: 16787bacf66b0e541837b3cff07c9c95, type: 3}
+  sfxPitchRange: {x: 0.9, y: 1.1}
 --- !u!114 &8441425304135429286
 MonoBehaviour:
   m_ObjectHideFlags: 0

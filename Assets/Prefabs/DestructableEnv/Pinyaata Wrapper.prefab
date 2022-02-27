@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugTextField: {fileID: 0}
+  sfxSettings: {fileID: 11400000, guid: ea3e9f4b1d7fa4742974b1a0903343a9, type: 2}
   isInvincible: 0
   isInvincibleBeforeGame: 0
   healthCurrent: 0
@@ -78,7 +79,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2489478353924082275}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pinyaata Wrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}

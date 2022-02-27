@@ -8,6 +8,7 @@ using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour {
     public TextMeshProUGUI debugTextField;
+    public DamageableSFXSettings sfxSettings;
 
     public bool isInvincible;
     public bool isInvincibleBeforeGame;
@@ -37,6 +38,9 @@ public class Damageable : MonoBehaviour {
         if (isInvincibleBeforeGame) {
             if (GameManager.Instance.gameState == GameState.NOT_STARTED) return;
         }
+
+        // Play damage SFX
+        sfxSettings.PlaySFX(this, damagePosition, incomingDamage);
 
         // Calculate incoming damage
         float originalHealth = healthCurrent;
