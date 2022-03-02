@@ -2,9 +2,12 @@
 
 Put on a blindfold, and use echolocation to play Hit the Pinyaata with a talking cat piñata! Break as much stuff as you can in 2 minutes!
 
+ <p align="center">
+    <img src="./Assets/Textures/icon/titlecard.png ">
+</p>
 
 
-This was my submission to "[Brackey's Game Jam 2022.1](https://itch.io/jam/brackeys-7)", a 7 day game jam.
+This was my submission to "[Brackey's Game Jam 2022.1](https://itch.io/jam/brackeys-7)", a 7 day game jam. The goal for this one was to try out a new ping sweep shader, and to try out NodeCanvas for complex dialog trees.
 
 You can download the game for free [here, on itch.io](https://request.itch.io/curse-of-the-pinyaata),
 or you can check out my other projects at [request.moe](https://request.moe).
@@ -17,7 +20,6 @@ You're free to do whatever with this code, but if you do use it, it'd be real co
   2. Install the following assets from the Unity Asset Store:
      * [SteamVR Plugin](https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647)
      * [Hurricane VR](https://assetstore.unity.com/packages/tools/physics/hurricane-vr-physics-interaction-toolkit-177300)
-     * [Hexabody VR Player Controller](https://assetstore.unity.com/packages/tools/physics/hexabody-vr-player-controller-185521)
      * [Odin Inspector](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041)
      * [NodeCanvas](https://nodecanvas.paradoxnotion.com/)
   3. Import the [Synty Polygon Office Pack](https://syntystore.com/products/polygon-office-pack) Unity Package
