@@ -34,3 +34,24 @@ You're free to do whatever with this code, but if you do use it, it'd be real co
 - Odin Inspector (3.0.12)
 - NodeCanvas (3.2.2)
 
+## Third Party Assets
+
+Type|Asset|Author|License
+-|-|-|-
+Math Library|	[MathFS](https://github.com/FreyaHolmer/Mathfs)|	[Freya Holmér](https://twitter.com/FreyaHolmer)|	[MIT License](https://github.com/FreyaHolmer/Mathfs/blob/master/LICENSE.txt)
+Font|	[Press Start 2P Font](https://www.fontspace.com/press-start-2p-font-f11591)|	codeman38|	[SIL Open Font License (OFL)](https://www.fontspace.com/help#license-17)
+BGM|	[Eye of the Storm](https://opengameart.org/content/eye-of-the-storm)|	[joth](https://opengameart.org/users/joth)|	[CC0 1.0 Universal](https://opengameart.org/content/eye-of-the-storm)
+BGM|	[Raining Bits](https://opengameart.org/content/raining-bits)|	[Gundatsch](https://opengameart.org/users/gundatsch)|	[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+Textures|	[UI Pack: RPG Expansion](https://www.kenney.nl/assets/ui-pack-rpg-expansion)|	[Kenney](https://twitter.com/KenneyNL)|	[CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+Model|	[Wooden Bat](https://opengameart.org/content/wooden-bat-0)|	[Proxy Games](https://opengameart.org/users/proxy-games)|	[CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+Model|	[Padlock](https://opengameart.org/content/padlock)|	[Savino](https://opengameart.org/users/savino)|	[CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
+
+## Other/Paid Assets (Not Included In Repo)
+
+Type|Asset|Author
+-|-|-
+VR Base Framework|[SteamVR Plugin](https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647)|Valve|
+VR Interactions|[Hurricane VR](https://assetstore.unity.com/packages/tools/physics/hurricane-vr-physics-interaction-toolkit-177300)|Cloudwalkin Games 
+Inspector|[Odin Inspector and Serializer](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041)|Sirenix
+Models|	[Polygon Office Pack](https://syntystore.com/products/polygon-office-pack)|	Synty
