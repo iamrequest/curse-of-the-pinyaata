@@ -4,22 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using HurricaneVR.Framework.ControllerInput;
 
-[RequireComponent(typeof(Camera))]
 public class DesktopCamera : MonoBehaviour {
-    private Camera cam;
+    public Camera cam;
     public float depth;
+    public Vector3 posOffset;
+    public bool followPlayer;
 
     [Range(0f, 1f)]
     public float positionSpeed, rotationSpeed;
 
     private void Start() {
-        cam = GetComponent<Camera>();
         cam.depth = depth;
     }
 
     private void Update() {
-        transform.position = Vector3.Slerp(transform.position, Player.Instance.playerController.Camera.position, positionSpeed);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Player.Instance.playerController.Camera.rotation, rotationSpeed);
+        if (followPlayer) {
+            transform.position = Vector3.Slerp(transform.position, Player.Instance.playerController.Camera.position + Player.Instance.playerController.Camera.rotation * posOffset, positionSpeed);
+        }
 
         if (HVRGlobalInputs.Instance.RightTriggerButtonState.JustActivated) {
             Screenshot();
