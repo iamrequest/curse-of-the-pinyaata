@@ -10,7 +10,7 @@ Put on a blindfold, and use echolocation to play Hit the Pinyaata with a talking
 This was my submission to "[Brackey's Game Jam 2022.1](https://itch.io/jam/brackeys-7)", a 7 day game jam. The goal for this one was to try out a new ping sweep shader, and to try out NodeCanvas for complex dialog trees.
 
 You can download the game for free [here, on itch.io](https://request.itch.io/curse-of-the-pinyaata),
-or you can check out my other projects at [request.moe](https://request.moe).
+or you can check out my other projects at [request.moe](https://request.moe). If you're interested, you can read my [postmortem for this project](./postmortem.md) as well.
 
 You're free to do whatever with this code, but if you do use it, it'd be real cool of you to link back to this page or the itch.io page (or both). Thanks!
 
